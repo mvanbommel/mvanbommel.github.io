@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Matthew van Bommel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- jQuery local fallback -->
+  <script>window.jQuery || document.write('<script src="jquery/jquery-3.3.1.min.js"><\/script>')</script>
+  <!-- Bootstrap JS CDN -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <!-- Bootstrap JS local fallback -->
+  <script>if(typeof($.fn.modal) === 'undefined') {document.write('<script src="bootstrap-4.2.1-dist/js/bootstrap.min.js"><\/script>')}</script>
+  <!-- Bootstrap CSS local fallback -->
+  <div id="bootstrapCssTest" class="hidden"></div>
+  <script>
+    $(function() {
+      if ($('#bootstrapCssTest').is(':visible')) {
+        $("head").prepend('<link rel="stylesheet" href="bootstrap-4.2.1-dist/css/bootstrap.min.css">');
+      }
+    });
+  </script>
+  
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-sm navbar-dark fixed-top navbar-custom">
+      <!--Home Button-->
+      <a class="navbar-brand navbar-brand-custom" href="#">MvB</a>
+      <!--Hamburger Menu-->
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <!--Navbar Buttons-->
+      <ul class="nav navbar-nav ml-auto">
+        <li class = 'ml-auto'><a href="https://github.com/mvanbommel" target="_blank">
+          <img class="navbar-button" src="images/GitHub-Mark-Light-64px.png" alt="github">
+        </a></li>
+        <li class = 'ml-auto'><a href="https://twitter.com/MattvanBommel" target="_blank">
+          <img class="navbar-button" src="images/Twitter_Logo_WhiteOnImage.png" alt="twitter">
+        </a></li>
+        <li class = 'ml-auto'><a href="https://www.linkedin.com/in/matthewvanbommel/" target="_blank">
+          <img class="navbar-button" src="images/In-White-54px-R.png" alt="linkedin">
+        </a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!--Landing Image-->
+  <div class="bg">
+     <div class="centered-banner name-box">
+       <p class = "my-name">
+         M<span class="my-name-lower-caps">ATTHEW</span>
+         <span class="my-name-lower-caps">VAN</span>&nbsp;B<span class="my-name-lower-caps">OMMEL</span>
+       </p>
+       <br>
+       <p class = "my-descriptors">
+        Basketball&nbsp;Analyst&nbsp;/
+        Data&nbsp;Scientist&nbsp;/
+        Lifelong&nbsp;Learner
+       </p>
+     </div>
+  </div>
+  
+  <!--Content Container-->
+  <div class="container-fluid">
+    
+    <!--About Me-->
+    <!--About Me Header Row-->
+    <div class="row">
+      <div class="col text-center">
+        <h2 class="linked-header" id="about-me">About Me</h2>
+        <br>
+      </div>
+    </div>
+    
+    <!--About Me Content Row-->
+    <div class="row">
+      <div class="col-md-4 no-right-padding"> <!--Remove padding to center image-->
+        <img src="images/matt_bio_pic.jpg" class="bio-image rounded-circle" alt="Picture of Me">
+      </div>
+      <div class="col-md-7"> <!--Remove padding to center image-->
+        <p>
+          I build tools to make data more accessible and impactful. Currently, I perform this role as a member of the Basketball Analytics team for the <a href="https://www.nba.com/kings/">Sacramento Kings</a>. Previously, I interned in the <a href="https://www.nba.com/sixers/">Philadelphia 76ers</a> analytics department and completed an MSc Statistics at <a href="https://www.sfu.ca/">Simon Fraser University</a> where my research focused on using machine learning, data mining, and statistical tools to gain insight into NBA optical player tracking data.
+        </p>
+        <p>
+          Outside of work, I enjoy playing sports (basketball, ultimate frisbee, tennis), <a href="https://www.goodreads.com/vanbommel">reading</a>, and <a href="https://www.boardgamegeek.com/collection/user/mvbomm?subtype=boardgame&ff=1">board games</a>. Living in Sacramento has allowed me to transition to cycling as my main form of transportation and I try to be my own bicycle mechanic as much as possible. I also perform in a Harold Night improv show every Wednesday night at the <a href="https://www.saccomedyspot.com/performers/">Sacramento Comedy Spot</a>.
+        </p>
+      </div>
+    </div>
+
+    
+    <!--Projects-->
+    <!--Projects Header Row-->
+    <div class="row">
+      <div class="col text-center">
+        <h2 class="linked-header" id="projects">Projects</h2>
+        <br>
+      </div>
+    </div>
+    
+    
+    <!--Projects Boxes Row-->
+    <div class="row">
+      
+      <div class="col-md-4">
+        <a href="projects/nba_scorekeeper_bias.html">
+          <div class="project-box">
+            <img src="images/icons8-basketball-50.png" class="project-icon" alt="basketball_icon">
+            <p class="project-text">
+              <br>
+              <strong>NBA Scorekeeper Bias</strong>
+              <br>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-md-4">
+        <a href="projects/sacramento_dispatch_response_time.html">
+          <div class="project-box">
+            <img src="images/icons8-police-badge-50.png" class="project-icon" alt="police_badge_icon">
+            <p class="project-text">
+              <br>
+              <strong>Sacramento Dispatch Response Time App</strong>
+              <br>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-md-4">
+        <a href="projects/personal_website.html">
+          <div class="project-box">
+            <img src="images/icons8-user-50.png" class="project-icon" alt="user_icon">
+            <p class="project-text">
+              <br>
+              <strong>Personal Website</strong>
+              <br>
+          </div>
+        </a>
+      </div>
+
+    </div> <!--Close Projects Boxes Row-->
+    
+    
+    <!--Media and Posts Row-->
+    <div class="row">
+      
+      <div class="col-md-6">
+        <h2 class="text-center linked-header" id="posts">Posts</h2>
+        <ul>
+          <li><a href="posts/the_psychology_of_everyday_things.html">Book Reflections: The Psychology of Everyday Things</a> (March 23,
+            2019)</li>
+        </ul>
+      </div>
+      
+      <div class="col-md-6">
+        <h2 class="text-center linked-header" id="media">Media Coverage</h2>
+        <ul>
+          <li><a href="https://www.tsn.ca/new-study-suggests-nba-scorekeeper-bias-impacts-box-scores-across-the-league-1.746947">Study Suggests NBA Scorekeeper Bias Impacts Box Scores</a><br>
+            TSN, The Canadian Press</li>
+          <li><a href="https://sports.vice.com/en_us/article/9apqpy/remembering-hakeem-olajuwons-phantom-quadruple-double-and-the-mystery-of-nba-stat-cookin">Remembering Hakeem Olajuwon's Phantom Quadruple-Double, and the Mystery of NBA Stat Cookin'</a><br>
+            VICE Sports</li>
+          <li><a href="http://www.espn.com/chalk/story/_/id/19752031/future-sports-betting-fake-news-manipulated-data-future-betting-fraud">Fake News, Manipulated Data and the Future of Betting Fraud</a><br>
+            ESPN</li>
+          <li><a href="https://www.thescore.com/nba/news/1579090">How Much Does Scorekeeper Bias Affect NBA Box Scores?</a><br>
+            The Score</li>
+          <li><a href="https://www.complex.com/sports/2018/04/how-nba-scorekeepers-track-player-stats">Why NBA Statisticians Have a Way Harder Job Than You Think</a><br>
+            Complex</li>
+        </ul>
+      </div>
+      
+    </div> <!--Close Projects Boxes Row-->
+  </div> <!--Close Content Container-->
+    
+    <footer class="footer small-font">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <p class="no-margin">Contact</p>
+          <ul class="list-unstyled no-margin">
+            <li><a href="https://twitter.com/MattvanBommel" target="_blank">Twitter</a></li>
+            <li><a href="https://www.linkedin.com/in/matthewvanbommel/" target="_blank">LinkedIn</a></li>
+            <li><a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Email</a></li>
+          </ul>
+          <div class="collapse" id="collapseExample">
+              matthew[DOT]vbommel[AT]gmail[DOT]com
+          </div>
+        </div>
+
+      </div>
+    </footer>
+    
+
+
+
+</body>
+</html>

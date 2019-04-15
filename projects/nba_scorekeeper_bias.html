@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NBA Scorekeeper Bias</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body class="below-navbar">
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- jQuery local fallback -->
+  <script>window.jQuery || document.write('<script src="../jquery/jquery-3.3.1.min.js"><\/script>')</script>
+  <!-- Bootstrap JS CDN -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <!-- Bootstrap JS local fallback -->
+  <script>if(typeof($.fn.modal) === 'undefined') {document.write('<script src="../bootstrap-4.2.1-dist/js/bootstrap.min.js"><\/script>')}</script>
+  <!-- Bootstrap CSS local fallback -->
+  <div id="bootstrapCssTest" class="hidden"></div>
+  <script>
+    $(function() {
+      if ($('#bootstrapCssTest').is(':visible')) {
+        $("head").prepend('<link rel="stylesheet" href="../bootstrap-4.2.1-dist/css/bootstrap.min.css">');
+      }
+    });
+  </script>
+  
+  
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-sm navbar-dark fixed-top navbar-custom">
+      <!--Home Button-->
+      <a class="navbar-brand navbar-brand-custom" href="../index.html">MvB</a>
+      <!--Hamburger Menu-->
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <!--Navbar Buttons-->
+      <ul class="nav navbar-nav ml-auto">
+        <li class = 'ml-auto'><a href="https://github.com/mvanbommel" target="_blank">
+          <img class="navbar-button" src="../images/GitHub-Mark-Light-64px.png" alt="github">
+        </a></li>
+        <li class = 'ml-auto'><a href="https://twitter.com/MattvanBommel" target="_blank">
+          <img class="navbar-button" src="../images/Twitter_Logo_WhiteOnImage.png" alt="twitter">
+        </a></li>
+        <li class = 'ml-auto'><a href="https://www.linkedin.com/in/matthewvanbommel/" target="_blank">
+          <img class="navbar-button" src="../images/In-White-54px-R.png" alt="linkedin">
+        </a></li>
+      </ul>
+    </div>
+  </nav>
+  
+
+  
+ 
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <div class="row">
+        <nav class="col-md-2 hide-on-narrow-screen sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link sidebar-link active" href="#introduction">Introduction</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link sidebar-link active" href="#exploration">Exploration</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link sidebar-link active" href="#contextual_assist_model">Contextual Assist Model</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link sidebar-link active" href="#results">Results</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link sidebar-link active" href="#conclusion">Conclusion</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link sidebar-link active" href="#publications">Publications</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link sidebar-link active" href="#media">Media Coverage</a>
+              </li>
+            </ul>
+          </div>
+      </nav>
+    </div>
+  </div>
+    
+    
+    <div class="col-md-9">
+      <h1>NBA Scorekeeper Bias</h1>
+      <p>
+        <em>Posted: March 9, 2019</em>
+      </p>
+      
+      <h2 class="linked-header" id="introduction">Introduction</h2>
+      <p>
+        The inspiration for this project was the Deadspin article <a href="https://deadspin.com/the-confessions-of-an-nba-scorekeeper-5345287">The Confessions
+        of an NBA Scorekeeper</a>. The article details the story behind a Vancouver Grizzlies scorekeeper who, in 1997, awarded 23 (mostly undeserved) assists
+        to visting Los Angeles Laker Nick Van Exel. Everyone who plays or watches basketball knows that some statistics - particularly assists - are
+        subjective. An <a href="https://www.nba.com/canada/Basketball_U_on_Assists-Canada_Generic_Article-18072.html">assist</a> in the NBA “is awarded only if,
+        in the judgment of the statistician, the last player’s pass contributed directly to a made
+        basket". The NBA has even <a href="https://www.usatoday.com/story/sports/nba/2014/11/11/league-takes-away-lebrons-triple-double/18885699/">stepped
+        in</a> to correct for scorekeeper errors after the fact. Thus, given this subjectivity, and the fact that NBA scorekeepers are hired by the home teams
+        to record statistics for each game, I became interested in quantifying the inconsistencies and potential biases of NBA scorekeepers. This interest was
+        shared by my master's research supervisor at the time, <a href="http://www.lukebornn.com/">Luke Bornn</a>, and the project was a joint effort.
+      </p>
+      <p>
+        A portion of the code used in this project is available on <a href="https://github.com/mvanbommel/nba_scorekeeper_bias">GitHub</a>. More detailed
+        accounts of this project are linked in the <a href="#publications">Publications Section</a> below.
+      </p>
+      
+      <h2 class="linked-header" id="exploration">Exploration</h2>
+      <p>
+        Our initial exploration was focused on assists and blocks: two potentially subjective statistics identified in the Deadspin article. We examined box
+        score data for all Regular Season games in the 2015-2016 NBA season, scraped from <a href="http://www.espn.com/">ESPN.com</a> using code available in
+        the <a href="https://github.com/mvanbommel/scrape_nba_box_scores">scrape_nba_box_scores</a> repository. Then, since assists and blocks are highly
+        dependent on field goals made (FGM) and opponent field goals attempted (FGA), we examine the assist ratio (AR) and block ration (BR) which we define
+        as
+      </p>
+      <ul class="list-unstyled">
+        <li>AR = AST / FGM</li>
+        <li>BR = BLK / (Opponent FGA)</li>
+      </ul>
+      <p>
+        We suspected that there were two distinct components of scorekeeper inconsistencies: scorekeeper bias and scorekeeper generosity. We defined
+        scorekeeper bias to be how much more likely a scorekeeper is to award statistics to the home team compared to the away team and scorekeeper generosity
+        to the how likely a scorekeeper is to award statistics to either team. Thus a generous scorekeeper would award many assists to both teams while a
+        biased scorekeeper would award more assists to the home team compared to the away team (or vice-versa if they are biased against their home team).
+      </p>
+      <p>
+        We also suspected one of the main factors controlling the AR and BR awarded by a scorekeeper would be the teams they observe. For example, since the
+        Golden
+        State Warriors had the highest AR value in 2015-2016, thus the Warriors' scorekeeper likely tended to award a higher AR to the home team than the away
+        team. Similarly, some teams may have been better at forcing opponents into low AR or BR values. Additionally, there may have been an overall home
+        advantage common to all teams due to improved play at home.
+      </p>
+      <p>
+        We estimated a linear model that attempted to quantify the bias and generosity of all 30 NBA scorekeepers, while controlling for the other factors
+        discussed above. This resulted in an estimated home and away AR and BR for each scorekeeper, as displayed in the figures below.
+      </p>
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="../images/2016_model_ar_logo.png" class="img-fluid" alt="My Image">
+          </div>
+          <div class="col-md-6">
+            <img src="../images/2016_model_br_logo.png" class="img-fluid" alt="My Image">
+          </div>
+        </div>
+      </div>
+      
+      While these models provided some indication of scorekeeper tendencies, the AR model and the BR model had coefficient of determination (R<sup>2</sup>
+      values) of 0.279 and 0.228 respectively. Additionally, it was not clear if the scorekeeper bias effect truly measured scorekeeper bias or if it
+      measured a team speciﬁc home effect. Thus, there was significant room for improvement in these modelling approaches.
+      
+      <h2 class="linked-header" id="contextual_assist_model">Contextual Assist Model</h2>
+      <p>
+        Given that the context surrounding an assist (the pass, time with the ball, defender positioning, etc.) is instrumental to its attribution, we used
+        spatio-temporal data to estimate a contextual assist model to predict the probability that an individual pass would would recorded as an assist.
+        Specifically, we used <a href="https://www.stats.com/sportvu-basketball/">SportVu</a> optical player tracking data to estimate a model for 82,493
+        potential assists from the 2015-2016 NBA season, where we
+        defined a potential assist to be any completed pass from a passer to a shooter who scored a field goal within 7 seconds
+        of receiving the pass. The shooter was permitted to dribble and move after receiving the pass, as long as he maintained possession of the ball until
+        the successful shot (no rebounds, turnovers, or additional passes). Note that while an inbounds pass can be credited as an assist, for simplicity we
+        will only examined passes made while the ball was in play.
+      </p>
+      <p>
+        We used the following contextual covariates to predict the probability of a recorded assist:
+      </p>
+      <ul>
+        <li>the length of time between the pass and the shot</li>
+        <li>the number of dribbles between the pass and the shot</li>
+        <li>the distance travelled by the shooter between the pass and the shot</li>
+        <li>the distance travelled by the pass</li>
+        <li>the distance of the nearest defender to the passer when the pass was made</li>
+        <li>the distance of the nearest defender to the shooter when the pass was received</li>
+        <li>the court zone of the passer when the pass was made</li>
+        <li>the court zone of the shooter when the pass was received</li>
+      </ul>
+      <p>
+        We also used the identity and the position (PG, SG, SF, PF, or C) of the passer as additional covariates, and included the covariates from the
+        previous linear model to estimate a logistic regression model to predict the probability that a potential assist would be recorded as an assist.
+      </p>
+      
+      <h2 class="linked-header" id="results">Results</h2>
+      <p>
+        Using our models as classification models for potential assists, the contextual assist logistic regression model has a misclassification rate of only
+        6.6%, better than an equivalent model with no scorekeeper coefficients (7.0%) and a dramatic improvement over the linear model (34.4%). Thus, we
+        concluded that our contextual assist model was able to accurately capture the factors leading to a recorded assist. Surprisingly, the scorekeeper
+        coefficients from the logistic regression model were highly correlated with those from the linear model (0.892 for the generosity coefficients and
+        0.597 for the bias coefficients), indicating that our simpler model was able to detect scorekeeper effects. The scorekeeper coefficients were also
+        correlated across seasons. Re-estimating the models across the 2013-2014 and 2014-2015 seasons produced between season correlation values of at least
+        0.776 for scorekeeper generosity coefficients and 0.460 for scorekeeper bias coefficients.
+      </p>
+      <p>
+        Turning to the contextual coefficients, the results tended to reflect intuition. Potential assists with increased number of dribbles and time between
+        the pass and the shot both tended to be less likely to be recorded as assists, with time having a greater impact. Similar passes were also more
+        likely to be recorded as assists when made by a point guard compared to a center. Individual players also had a wide range in the likelihood of their
+        passes being recorded as assists, with an average potential assist being 27.41% more likely to be recorded as an assist for the player with the
+        greatest individual coefficient (Nick Collison) to the player with the least (Andre Roberson).
+      </p>
+      
+      
+      <h2 class="linked-header" id="conclusion">Conclusion</h2>
+      <p>
+        We discovered evidence of scorekeeper inconsistencies in the recording of assists and blocks across NBA scorekeepers. The greater effect was
+        scorekeeper generosity, with scorekeepers having a range of how likely they were to award statistics to either time, however, evidence of
+        scorekeeper bias, both in favour of and against their corresponding home team, was also uncovered. We also produced methods for calculating the
+        scorekeeper effects on player statistics at the individual player level, as well as a method for adjusting statistics to correct for such effects
+        (these details are not presented here but are available in the paper linked below). While assists and blocks will not affect the
+        outcome of any individual game, box score statistics are the baseline measures for player performance. Therefore, understanding the inconsistencies of
+        box score statistics can lead to more accurate player valuations.
+      </p>
+
+      <h2 class="linked-header" id="publications">Publications</h2>
+      <h5>DMKD Article</h5>
+      <p>
+        The final output of this project was the paper <a href="https://link.springer.com/article/10.1007%2Fs10618-017-0497-y"> Adjusting for scorekeeper bias
+      in NBA box scores</a> (<a
+          href="http://www.readcube.com/articles/10.1007/s10618-017-0497-y?author_access_token=2d1Qnw6gJ2FSK8dQelHhePe4RwlQNchNByi7wbcMAY5wPAnuWMtbk1vJZa6JuvaOJZD6DGkcRLPph38FNvDQKme8m5GpOCTegQ2Lm8iZZmpCjTBA_8Vmho9PicjyUHYG9j5asAyYRLmxqCYJ9b_F3g%3D%3D">PDF</a>) published in the journal Data Mining and Knowledge Discovery as part of a <a href="https://link.springer.com/journal/10618/topicalCollection/AC_8a48e69c8bd06713efbb996a1db86741">special issue on sports analytics</a>.
+      </p>
+      
+      <h5>Sloan Paper / Poster</h5>
+      <p>
+        Previous to publication in DMKD, this project was presented at the 2016 MIT Sloan Sports Analytics Conference as a <a
+          href="../files/van_exel_effect_poster.pdf">Research Poster</a> and accompanying <a
+          href="http://www.sloansportsconference.com/wp-content/uploads/2016/02/1502-van-exel-effect.pdf">Research Paper</a>.
+      </p>
+      
+      <h2 class="linked-header" id="media">Media Coverage</h2>
+      <p>
+        This project caught the attention of several media outlets at the time, and continues to be referenced in articles examining scorekeeper influence on
+        statistics. A selection of articles referencing the work is included below:
+      </p>
+      <ul>
+          <li><a href="https://www.tsn.ca/new-study-suggests-nba-scorekeeper-bias-impacts-box-scores-across-the-league-1.746947">Study Suggests NBA Scorekeeper Bias Impacts Box Scores</a><br>
+            (TSN, The Canadian Press)</li>
+          <li><a href="https://sports.vice.com/en_us/article/9apqpy/remembering-hakeem-olajuwons-phantom-quadruple-double-and-the-mystery-of-nba-stat-cookin">Remembering Hakeem Olajuwon's Phantom Quadruple-Double, and the Mystery of NBA Stat Cookin'</a><br>
+            VICE Sports</li>
+          <li><a href="http://www.espn.com/chalk/story/_/id/19752031/future-sports-betting-fake-news-manipulated-data-future-betting-fraud">Fake News, Manipulated Data and the Future of Betting Fraud</a><br>
+            ESPN</li>
+          <li><a href="https://www.thescore.com/nba/news/1579090">How Much Does Scorekeeper Bias Affect NBA Box Scores?</a><br>
+            The Score</li>
+          <li><a href="https://www.complex.com/sports/2018/04/how-nba-scorekeepers-track-player-stats">Why NBA Statisticians Have a Way Harder Job Than You Think</a><br>
+            Complex</li>
+        </ul>
+    </div>
+  </div>
+</div>
+
+<footer class="footer small-font">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <p class="no-margin">Contact</p>
+      <ul class="list-unstyled no-margin">
+        <li><a href="https://twitter.com/MattvanBommel" target="_blank">Twitter</a></li>
+        <li><a href="https://www.linkedin.com/in/matthewvanbommel/" target="_blank">LinkedIn</a></li>
+        <li><a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Email</a></li>
+      </ul>
+      <div class="collapse" id="collapseExample">
+          matthew[DOT]vbommel[AT]gmail[DOT]com
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>

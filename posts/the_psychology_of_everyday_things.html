@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Psychology of Everyday Things</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body  class="below-navbar">
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- jQuery local fallback -->
+  <script>window.jQuery || document.write('<script src="../jquery/jquery-3.3.1.min.js"><\/script>')</script>
+  <!-- Bootstrap JS CDN -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <!-- Bootstrap JS local fallback -->
+  <script>if(typeof($.fn.modal) === 'undefined') {document.write('<script src="../bootstrap-4.2.1-dist/js/bootstrap.min.js"><\/script>')}</script>
+  <!-- Bootstrap CSS local fallback -->
+  <div id="bootstrapCssTest" class="hidden"></div>
+  <script>
+    $(function() {
+      if ($('#bootstrapCssTest').is(':visible')) {
+        $("head").prepend('<link rel="stylesheet" href="../bootstrap-4.2.1-dist/css/bootstrap.min.css">');
+      }
+    });
+  </script>
+
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-sm navbar-dark fixed-top navbar-custom">
+      <!--Home Button-->
+      <a class="navbar-brand navbar-brand-custom" href="../index.html">MvB</a>
+      <!--Hamburger Menu-->
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <!--Navbar Buttons-->
+      <ul class="nav navbar-nav ml-auto">
+        <li class = 'ml-auto'><a href="https://github.com/mvanbommel" target="_blank">
+          <img class="navbar-button" src="../images/GitHub-Mark-Light-64px.png" alt="github">
+        </a></li>
+        <li class = 'ml-auto'><a href="https://twitter.com/MattvanBommel" target="_blank">
+          <img class="navbar-button" src="../images/Twitter_Logo_WhiteOnImage.png" alt="twitter">
+        </a></li>
+        <li class = 'ml-auto'><a href="https://www.linkedin.com/in/matthewvanbommel/" target="_blank">
+          <img class="navbar-button" src="../images/In-White-54px-R.png" alt="linkedin">
+        </a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <div class="row">
+        <nav class="col-md-2 hide-on-narrow-screen sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link sidebar-link active" href="#overview">Overview</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link sidebar-link active" href="#key_takeaways">Key Takeaways</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link sidebar-link active" href="#final_thoughts">Final Thoughts</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="col-md-9">
+      <h1>Book Reflections: The Psychology of Everyday Things</h1>
+      <p>
+        <em>Posted: March 23, 2019</em>
+      </p>
+
+      <h2 class="linked-header" id="overview">Overview</h2>
+      <p>
+        <a href="https://www.goodreads.com/book/show/842.The_Psychology_of_Everyday_Things">The Psychology of Everday Things</a> by Donald A. Norman
+        discusses design in our world and how to optimize user experiences. Originally published in 1988, later revisions have the title <a
+          href="https://www.goodreads.com/book/show/840.The_Design_of_Everyday_Things">The Design of Everyday Things</a> and have been updated as recently as
+        2013. Norman is a cognitive scientist and usability engineer and the book presents his thoughts and experiences with design - particularly
+        methods for improvement and optimization. While this book mostly focuses on the design of objects in the physical world, I read it from the perspective
+        of a designer of digital tools and interfaces and found myself able to take away many of the lessons discussed.
+      </p>
+      
+      <h2 class="linked-header" id="key_takeaways">Key Takeaways</h2>
+      <h5>Human behaviour is not always rational.</h5>
+      <p>
+        The fact that human behaviour can be irrational should not be a surprise to anyone who has ever done something and not been able to explain why.
+        While it is appealing to imagine users behaving
+        rationally at all times when using a system or application, that simply is not an accurate depiction. As such, a designer can never predict how users
+        will
+        act, and thus systems must be designed in light of this lack of predictability. One important technique resulting from this reality is to:
+      </p>
+      
+      <h5>Design for error.</h5>
+      <p>
+        Since humans do not always behave rationally, they are bound to make mistakes. As such, systems should be designed not only to help minimize the
+        likelihood of those mistakes but also to make it easy to recover from them. This latter point hit home with me, both from my experiences as a user
+        and as a designer. In a well designed system, a user should be able to explore and experiment without fear of irreversible negative consequences. Not
+        only does this afford a user more ease when using a system, it also allows them to discover new techniques or features that may have remained hidden
+        had they been hesitant to explore and try new things.
+      </p>
+      
+      <h5>Put required knowledge in the world.</h5>
+      <p>
+        While it is tempting to plan to "teach" users how to operate a system (especially when you can count your users on one hand), all required
+        information should be present in the system itself. If an action requires user memory, it is only a matter of time before a user misremembers or
+        outright forgets. The other side of this coin is to not let all of this information slow down operation, especially for experienced users. For example,
+        while presenting a tutorial is great for a first time user, it would be aggravating for an experienced user to have to proceed through a tutorial
+        each time they wanted to use the system.
+      </p>
+      
+      <h5>Make things visible</h5>
+      <p>
+        Visibility applies to both options and functions. Rather than hiding features in favour of a more "elegant" design, let users see all the available
+        options. Then, when a user makes a decision, make the results of each action obvious.
+      </p>
+      
+      <h5>Avoid creeping featurism.</h5>
+      <p>
+        It's always tempting to add one new feature or one new element, but eventually those single additions add up to be a bloated system. Knowing when to
+        stop, whether stopping is splitting a system into multiple parts or simply avoiding non-essential features, is a key design skill
+      </p>
+      
+      <h5>Use natural mappings.</h5>
+      <p>
+        While more prevalent in the physical world, natural mappings can also extend to the digital realm. A natural mapping is an intuitive
+        relationship between an action and the result (ie. turning the top of a steering wheel right turns a vehicle to the right). The most common natural
+        mappings are physical analogies, but design standards (like a floppy disk icon to reprsent a "save" action) can also serve as natural mappings. The key
+        here is
+        to
+        reduce
+        the
+        thought required by the user and to make their experience as seemless as possible.
+      </p>
+      
+      <h2 class="linked-header" id="final_thoughts">Final Thoughts</h2>
+      <p>
+        Given its publication date, many of the examples and case studies presented in this book are quite dated. Automatic faucets are
+        presented as the cusp of innovation and significant attention is devoted to telephone systems. However, the vast majority of the principles presented
+        apply to a wide variety of design situations and the book does an excellent job of bringing to the forefront the experience of a user - a relatable
+        experience for everyone. Finally, the main message of the book - "make operation simple for the user" - is more applicable than
+        ever given the possibilities presented by the technology of today.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<footer class="footer small-font">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <p class="no-margin">Contact</p>
+      <ul class="list-unstyled no-margin">
+        <li><a href="https://twitter.com/MattvanBommel" target="_blank">Twitter</a></li>
+        <li><a href="https://www.linkedin.com/in/matthewvanbommel/" target="_blank">LinkedIn</a></li>
+        <li><a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Email</a></li>
+      </ul>
+      <div class="collapse" id="collapseExample">
+          matthew[DOT]vbommel[AT]gmail[DOT]com
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>

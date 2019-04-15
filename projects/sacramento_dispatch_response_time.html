@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sacramento Dispatch Response Time App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body  class="below-navbar">
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- jQuery local fallback -->
+  <script>window.jQuery || document.write('<script src="../jquery/jquery-3.3.1.min.js"><\/script>')</script>
+  <!-- Bootstrap JS CDN -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <!-- Bootstrap JS local fallback -->
+  <script>if(typeof($.fn.modal) === 'undefined') {document.write('<script src="../bootstrap-4.2.1-dist/js/bootstrap.min.js"><\/script>')}</script>
+  <!-- Bootstrap CSS local fallback -->
+  <div id="bootstrapCssTest" class="hidden"></div>
+  <script>
+    $(function() {
+      if ($('#bootstrapCssTest').is(':visible')) {
+        $("head").prepend('<link rel="stylesheet" href="../bootstrap-4.2.1-dist/css/bootstrap.min.css">');
+      }
+    });
+  </script>
+
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-sm navbar-dark fixed-top navbar-custom">
+      <!--Home Button-->
+      <a class="navbar-brand navbar-brand-custom" href="../index.html">MvB</a>
+      <!--Hamburger Menu-->
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <!--Navbar Buttons-->
+      <ul class="nav navbar-nav ml-auto">
+        <li class = 'ml-auto'><a href="https://github.com/mvanbommel" target="_blank">
+          <img class="navbar-button" src="../images/GitHub-Mark-Light-64px.png" alt="github">
+        </a></li>
+        <li class = 'ml-auto'><a href="https://twitter.com/MattvanBommel" target="_blank">
+          <img class="navbar-button" src="../images/Twitter_Logo_WhiteOnImage.png" alt="twitter">
+        </a></li>
+        <li class = 'ml-auto'><a href="https://www.linkedin.com/in/matthewvanbommel/" target="_blank">
+          <img class="navbar-button" src="../images/In-White-54px-R.png" alt="linkedin">
+        </a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <div class="row">
+        <nav class="col-md-2 hide-on-narrow-screen sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link sidebar-link active" href="#introduction">Introduction</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="col-md-9">
+      <h1>Sacramento Dispatch Response Time App</h1>
+      <p>
+        <em>Posted: </em>
+      </p>
+
+      <h2 class="linked-header" id="introduction">Introduction</h2>
+      <p>
+        The goal of this project is to create an interactive application allowing users to view, interact with, and gain insight into the <a
+          href="http://data.cityofsacramento.org/datasets/9efe7653009b448f8d177c1da0cc068f_0">Sacramento Police Department Dispatch Data</a> available on the
+        City of Sacramento <a href="http://data.cityofsacramento.org/">Open Data Portal</a>. While it is fantastic that the city makes the data publically
+        available, it is very difficult to gain any insight into the data, especially someone who may not be technically inclined. Thus, hopefully my app will
+        be able to bridge the gap between the data and the user.
+      </p>
+      <p>
+        This project is currently under development. The code for the project is available on <a href="https://github.com/mvanbommel/SacCrimeData">GitHub</a>.
+      </p>
+    </div>
+  </div>
+</div>
+
+<footer class="footer small-font">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <p class="no-margin">Contact</p>
+      <ul class="list-unstyled no-margin">
+        <li><a href="https://twitter.com/MattvanBommel" target="_blank">Twitter</a></li>
+        <li><a href="https://www.linkedin.com/in/matthewvanbommel/" target="_blank">LinkedIn</a></li>
+        <li><a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Email</a></li>
+      </ul>
+      <div class="collapse" id="collapseExample">
+          matthew[DOT]vbommel[AT]gmail[DOT]com
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>

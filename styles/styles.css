@@ -1,0 +1,302 @@
+body, html {
+    background-color: #FFFFFF;
+    color: #2D2D2D;
+    font-size: calc(16px + (24 - 16) * ((100vw - 300px) / (1600 - 300))); /* Default font size */
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+
+/* */
+/* General /*
+/* */
+.below-navbar {
+    padding-top: 90px; /* Height of navbar = 45px */
+}
+
+.no-right-padding {
+    padding-right: 0px;
+}
+
+.no-margin {
+    margin: 0px;
+}
+
+.small-font {
+    font-size: calc(8px + (24 - 16) * ((100vw - 300px) / (1600 - 300)));
+}
+
+
+/* */
+/* Navbar */
+/* */
+/* Control icon size and spacing */
+.navbar-button {
+    height: 100%;
+    max-height: 30px;
+    width: auto;
+
+    margin-left: 10px;
+    margin-right: 10px;
+}
+/* Add a dark background color  */
+.navbar-custom {
+    background-color: #2D2D2D;
+    border: 0;
+    font-weight: bold;
+
+    margin-bottom: 0;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+}
+
+/* Change the brand font size */
+.navbar-brand-custom {
+    font-size: 16px;
+}
+
+/* Remove border color from the collapsible button */
+.navbar-default .navbar-toggler {
+    border-color: transparent;
+}
+
+/* Control home button */
+.navbar-dark .navbar-brand {
+    color: #FFFFFF;
+
+    line-height: 40px;
+    height: 40px;
+    width: 40px;
+
+    padding: 0px;
+
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Control home button hover */
+.navbar-dark .navbar-brand:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+
+/* */
+/* Footer */
+/* */
+.footer {
+    background-color: #2D2D2D;
+    color: #FFFFFF;
+
+    margin-top: 50px;
+    padding-top: 40px;
+    padding-bottom: 50px;
+
+    box-shadow: 0 50vh 0 50vh #2D2D2D; /* Extends footer background to bottom of page if page not full */
+}
+
+
+/* */
+/* Home Page Landing Image */
+/* */
+
+/* Horizontal background image */
+.bg {
+    background: black url("../images/basketball_tracking_data_snapshot.png");
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /* Full height */
+    height: 100%;
+
+    padding-top: 45px;
+}
+
+/* Vertical background image */
+@media (orientation: portrait) {
+    .bg {
+        background: black url("../images/basketball_tracking_data_snapshot_vertical.png");
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        /* Full height */
+        height: 100%;
+     }
+}
+
+.centered-banner {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.my-name {
+    font-size: calc(50px + (70 - 50) * ((100vw - 300px) / (1600 - 300)));
+    font-weight: bold;
+}
+
+.my-name-lower-caps {
+    font-size: calc(0.8 * 50px + (70 - 50) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.my-descriptors {
+    font-size: calc(20px + (32 - 20) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.name-box {
+    background-color: rgba(45,45,45,0.6);
+    color: #FFFFFF;
+    text-align: center;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; /* Outline letters in black */
+}
+
+
+/* */
+/* About Me Image */
+/* */
+.bio-image {
+  display: block;
+  margin: auto;
+
+  /* Dimensions */
+  height: auto;
+  width: 50%;
+  max-width: 300px;
+
+  /* Border values */
+  background-color: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  padding: 4px;
+}
+
+@media (min-width: 768px) {
+    .bio-image {
+      width: 95%;
+    }
+}
+
+
+/* */
+/* Projects on Home Page */
+/* */
+.project-box {
+    background-color: #2D2D2D;
+    margin-bottom: 10%;
+    padding-top: 50%;
+    position: relative;
+    width: 100%;
+}
+
+.project-icon {
+    /* Dimensions */
+    width: 50px;
+    height: auto;
+
+    /* Position */
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
+
+.project-text {
+    color: #FFFFFF;
+    text-align: center;
+
+    /* Position */
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+
+/* */
+/* Sidebar */
+/* */
+.sidebar {
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+
+    /* Position */
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    display: block;
+
+    padding: 45px 0 0 0; /* Height of navbar */
+}
+
+/* Keep sidebar position static (no scrolling) */
+.sidebar-sticky {
+    height: calc(100vh - 45px); /* Subtract height of navbar */
+
+    position: relative;
+    top: 0;
+
+    overflow-x: hidden;
+
+    /* Allow vertical scroll, but hide scrollbar */
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
+}
+.sidebar-sticky::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
+}
+
+/* Sidebar Links */
+a.sidebar-link:link {
+    color: #2D2D2D;
+}
+a.sidebar-link:visited {
+    color: #2D2D2D;
+}
+a.sidebar-link:active {
+    color: #2D2D2D;
+    text-decoration: none;
+}
+a.sidebar-link:hover {
+    color: #2D2D2D;
+    text-decoration: underline;
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+    .sidebar-sticky {
+        position: -webkit-sticky;
+        position: sticky;
+    }
+}
+
+/* Hide when screen is narrow */
+/* NOTE: must appear after .sidebar class */
+.hide-on-narrow-screen {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .hide-on-narrow-screen {
+        display: block;
+    }
+}
+
+/* Bookmarked (sidebar linked) headers appear below navbar on clicked links */
+.linked-header {
+    padding-top: 45px; /* Height of navbar */
+    padding-bottom: 20px; /* Add padding on bottom to even it out a bit */
+}
+
