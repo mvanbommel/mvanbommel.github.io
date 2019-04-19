@@ -35,7 +35,6 @@ h1, h2, h3, h4, h5, h6 {
 /* */
 /* Control icon size and spacing */
 .navbar-button {
-    height: 100%;
     max-height: 30px;
     width: auto;
 
