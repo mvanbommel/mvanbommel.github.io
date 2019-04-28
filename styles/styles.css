@@ -83,6 +83,38 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+
+/* Navbar Dropdown List */
+.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+.btn {
+    line-height: 15px;
+
+    background-color: #2D2D2D;
+    color: #FFFFFF;
+    border-color: #2D2D2D;
+}
+
+.btn:hover, .btn:focus, .btn:active {
+    background-color: #FFFFFF;
+    color: #2D2D2D;
+    border-color: #FFFFFF;
+}
+
+.dropdown-center {
+    display: inline-block;
+}
+
+.dropdown-menu-center {
+    text-align: center;
+}
+
+
+
 /* */
 /* Footer */
 /* */
