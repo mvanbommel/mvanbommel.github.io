@@ -144,7 +144,7 @@
         Our initial exploration was focused on assists and blocks: two potentially subjective statistics identified in the Deadspin article. We examined box
         score data for all Regular Season games in the 2015-2016 NBA season, scraped from <a href="http://www.espn.com/">ESPN.com</a> using code available in
         the <a href="https://github.com/mvanbommel/scrape_nba_box_scores">scrape_nba_box_scores</a> repository. Then, since assists and blocks are highly
-        dependent on field goals made (FGM) and opponent field goals attempted (FGA), we examine the assist ratio (AR) and block ration (BR) which we define
+        dependent on field goals made (FGM) and opponent field goals attempted (FGA), we examined the assist ratio (AR) and block ration (BR) which we defined
         as
       </p>
       <ul class="list-unstyled">
@@ -152,9 +152,15 @@
         <li>BR = BLK / (Opponent FGA)</li>
       </ul>
       <p>
-        We suspected that there were two distinct components of scorekeeper inconsistencies: scorekeeper bias and scorekeeper generosity. We defined
-        scorekeeper bias to be how much more likely a scorekeeper is to award statistics to the home team compared to the away team and scorekeeper generosity
-        to the how likely a scorekeeper is to award statistics to either team. Thus a generous scorekeeper would award many assists to both teams while a
+        We suspected that there were two distinct components of scorekeeper inconsistencies: scorekeeper bias and scorekeeper generosity.
+      </p>
+      <p>
+        <strong>scorekeeper bias</strong> - how much more likely a scorekeeper is to award statistics to the home team compared to the away team
+        <br>
+        <strong>scorekeeper generosity</strong> - how likely a scorekeeper is to award statistics to either team
+      </p>
+      <p>
+        Thus a generous scorekeeper would award many assists to both teams while a
         biased scorekeeper would award more assists to the home team compared to the away team (or vice-versa if they are biased against their home team).
       </p>
       <p>
@@ -166,7 +172,7 @@
       </p>
       <p>
         We estimated a linear model that attempted to quantify the bias and generosity of all 30 NBA scorekeepers, while controlling for the other factors
-        discussed above. This resulted in an estimated home and away AR and BR for each scorekeeper, as displayed in the figures below.
+        discussed above. The model produced the estimated home and away AR and BR for each scorekeeper displayed in the figures below.
       </p>
       
       <div class="container">
@@ -179,10 +185,12 @@
           </div>
         </div>
       </div>
-      
-      While these models provided some indication of scorekeeper tendencies, the AR model and the BR model had coefficient of determination (R<sup>2</sup>
-      values) of 0.279 and 0.228 respectively. Additionally, it was not clear if the scorekeeper bias effect truly measured scorekeeper bias or if it
-      measured a team speciﬁc home effect. Thus, there was significant room for improvement in these modelling approaches.
+      <br>
+      <p>
+        While these models provided some indication of scorekeeper tendencies, the AR model and the BR model had coefficient of determination (R<sup>2</sup>
+        values) of 0.279 and 0.228 respectively. Additionally, it was not clear if the scorekeeper bias effect truly measured scorekeeper bias or if it
+        measured a team speciﬁc home effect. Thus, there was significant room for improvement in these modelling approaches.
+      </p>
       
       <h2 class="linked-header" id="contextual_assist_model">Contextual Assist Model</h2>
       <p>
@@ -224,8 +232,9 @@
         0.776 for scorekeeper generosity coefficients and 0.460 for scorekeeper bias coefficients.
       </p>
       <p>
-        Turning to the contextual coefficients, the results tended to reflect intuition. Potential assists with increased number of dribbles and time between
-        the pass and the shot both tended to be less likely to be recorded as assists, with time having a greater impact. Similar passes were also more
+        Turning to the contextual coefficients, the results tended to reflect intuition. Increasing the number of dribbles or the time between
+        the pass and the shot both tended to lower the probability a pass was recorded as an assist (with time having a greater impact). Similar passes were
+        also more
         likely to be recorded as assists when made by a point guard compared to a center. Individual players also had a wide range in the likelihood of their
         passes being recorded as assists, with an average potential assist being 27.41% more likely to be recorded as an assist for the player with the
         greatest individual coefficient (Nick Collison) to the player with the least (Andre Roberson).
@@ -234,8 +243,8 @@
       
       <h2 class="linked-header" id="conclusion">Conclusion</h2>
       <p>
-        We discovered evidence of scorekeeper inconsistencies in the recording of assists and blocks across NBA scorekeepers. The greater effect was
-        scorekeeper generosity, with scorekeepers having a range of how likely they were to award statistics to either time, however, evidence of
+        We discovered evidence of inconsistencies in the recording of assists and blocks across NBA scorekeepers. The greater effect was
+        scorekeeper generosity, with scorekeepers having a range of how likely they were to award statistics to either team. However, evidence of
         scorekeeper bias, both in favour of and against their corresponding home team, was also uncovered. We also produced methods for calculating the
         scorekeeper effects on player statistics at the individual player level, as well as a method for adjusting statistics to correct for such effects
         (these details are not presented here but are available in the paper linked below). While assists and blocks will not affect the

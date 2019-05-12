@@ -117,9 +117,10 @@
 
       <h2 class="linked-header" id="introduction">Introduction</h2>
       <p>
-        I have had a personal website since 2016 when I realized that not only was <a href="https://www.matthewvanbommel.com/">matthewvabommel.com</a> still available,
+        I have had a personal website since 2016 when I realized that not only was <a href="https://www.matthewvanbommel.com/">matthewvanbommel.com</a> still
+        available,
         but I could own it for just $10 a year! Combined with the realization that I could host the site on <a href="https://pages.github.com/">GitHub
-        Pages</a> for free, and it became a no-brainer to have a personal website. Since then, it's gone through several design iterations, none of which I
+        Pages</a> for free, it became a no-brainer to have a personal website. Since then, my site has gone through several design iterations, none of which I
         have been entirely satisfied with. Given that dissatisfaction, and an increased interest in building web applications, I decided to do a complete
         redesign of my website, building it from the ground up. This task felt intimidating for someone whose previous web development experience
         consisted
@@ -133,8 +134,8 @@
       
       <h2 class="linked-header" id="bootstrap">Bootstrap</h2>
       <p>
-        On of the first decisions I made is that I would be using the <a href="https://getbootstrap.com/">Bootstrap</a> framework. Bootstrap was originally
-        created at Twitter and is now one of the most popular front-end frameworks and is completely open source. Bootstrap emphasizes responsive web
+        One of the first decisions I made is that I would be using the <a href="https://getbootstrap.com/">Bootstrap</a> framework. Bootstrap was originally
+        created at Twitter and is now one of the most popular front-end frameworks, while being completely open source. Bootstrap emphasizes responsive web
         design, allowing websites to look good across a variety of screen sizes and devices: a near necessity in today's digital age. Having created <a
           href="https://shiny.rstudio.com/">Shiny</a>
         apps, I was also a little familiar with the basic concepts of Bootstrap,
@@ -150,14 +151,15 @@
         and styles you can implement. As such, I was using the <a href="https://getbootstrap.com/docs/4.3/examples/dashboard/">dashboard</a> example to
         figure out how to add the sidebar (not displayed on mobile) and though I appeared to completely mirror the code, it
         looked different on my site than it did in the example. After a lot of search and much confusion, I finally realized that I was using an outdated
-        version of Boostrap - I was using v3 (thanks to copying and pasting a Stack Overflow snippet) while the example was using the up to date v4. Thankful to
+        version of Bootstrap - I was using v3 (thanks to copying and pasting a Stack Overflow snippet) while the example was using the up to date v4.
+        Thankful to
         have finally found
         the
         source of the issue, I updated
         my references to v4, only to have my site look completely different than it did in v3. Despite my defeated feeling and my decision to give up for the
         night, bringing the site back to its previous glory proved a fairly simple task thanks to Bootstrap's excellent <a
           href="https://getbootstrap.com/docs/4.0/migration/">migration documentation</a>. Aside from that mix-up, it was fairly smooth sailing with
-        Bootstrap (at least relative to the rest of my struggles) and I certainly recommend to someone building their own responsive website.
+        Bootstrap (at least relative to the rest of my struggles) and I certainly recommend it to someone building their own responsive website.
       </p>
       
       <h2 class="linked-header" id="design">Design</h2>
@@ -188,7 +190,8 @@
         does not include a method to adjust font size as the screen dimension changes, however I was able to accomplish this feature using the
         <code>calc()</code> function as presented in this <a href="https://css-tricks.com/snippets/css/fluid-typography/">guide</a> on fluid typography. I
         opted for a minimum font size of 16px that stretches all the way up to 24px for larger displays. These sizes are much larger than I originally
-        anticipated, but were strongly supported in this <a href="https://learnui.design/blog/mobile-desktop-website-font-size-guidelines.html">guide</a>. One gem: the publishing platform <a
+        anticipated, but were strongly supported in this <a href="https://learnui.design/blog/mobile-desktop-website-font-size-guidelines.html">guide</a>.
+        One gem from the guide: the publishing platform <a
           href="https://medium.com/">Medium</a> has a default text size of 21px! When text is the main feature of a site, making sure it is easy to read is of
         critical importance.
       </p>
@@ -214,7 +217,7 @@
         I especially liked the aesthetic on the home page of this site. However, in researching best practices for dark design, I found a <a
           href="https://ianstormtaylor.com/design-tip-never-use-black/">few</a> <a
           href="https://www.webdesignerdepot.com/2009/08/the-dos-and-donts-of-dark-web-design/">articles</a> that talked me down from a dark design, to
-        something more traditional, and I think the final product is better because of it.
+        something more traditional, and I think the decision improved the final product.
       </p>
       
 
@@ -233,7 +236,7 @@
       <h5>Chrome's Inspect Tool</h5>
       <p>
         Google Chrome's <a
-          href="https://developers.google.com/web/tools/chrome-devtools/">DevTools</a> are a set of tools built into Chrome (other browswers have
+          href="https://developers.google.com/web/tools/chrome-devtools/">DevTools</a> are a set of tools built into Chrome (other browsers have
         similar toolsets). I knew about DevTools before I started this project but I did not know how powerful they could be. Some highlights include:
       </p>
       <ul>
@@ -259,7 +262,7 @@
         At one stage, I could not figure out how to override a particular Bootstrap style with my own custom styling. After a quick search, I came across the
         <code>!important</code> keyword, which can be added to a line of styling to give it priority (ignoring the order of styles) - an excellent solution!
         Soon my stylesheet grew filled with <code>!important</code> keywords to solve all sorts of styling issues. At this point I looked at my stylesheet
-        and thought "this cannot be good practice" and further searching confirmed that thought. Sure, I had accomplished the desired results, but using a
+        and thought "this cannot be good practice". Further searching confirmed that thought. Sure, I had accomplished the desired results, but using a
         sort of 'cheat code' that would complicate future development. Removing all <code>!important</code> keywords involved finding the actual causes of
         the conflicts, and determining the correct way to resolve them. This corrective process resulted in a deeper understanding of the codebase and
         facilitated easier future changes.
