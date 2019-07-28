@@ -29,6 +29,19 @@ h1, h2, h3, h4, h5, h6 {
     font-size: calc(8px + (24 - 16) * ((100vw - 300px) / (1600 - 300)));
 }
 
+.no-bullets {
+    list-style-type: none;
+    padding: 0px;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.spaced-list li {
+    margin-bottom: 10px;
+}
+
 
 /* */
 /* Navbar */
