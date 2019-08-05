@@ -8,76 +8,90 @@
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-101862602-1', 'auto');
   ga('send', 'pageview');
+
+
 </script>
 
 <head>
   <meta charset="UTF-8">
   <title>Personal Website</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
   
   <!-- Bootstrap CSS CDN -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../styles/styles.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        rel="stylesheet">
+  <link href="../styles/styles.css" rel="stylesheet">
 </head>
 
 <body class="below-navbar">
-  <!-- jQuery CDN -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <!-- jQuery local fallback -->
-  <script>window.jQuery || document.write('<script src="../jquery/jquery-3.3.1.min.js"><\/script>')</script>
-  <!-- Bootstrap JS CDN -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-  <!-- Bootstrap JS local fallback -->
-  <script>if(typeof($.fn.modal) === 'undefined') {document.write('<script src="../bootstrap-4.2.1-dist/js/bootstrap.min.js"><\/script>')}</script>
-  <!-- Bootstrap CSS local fallback -->
-  <div id="bootstrapCssTest" class="hidden"></div>
-  <script>
+<!-- jQuery CDN -->
+<script crossorigin="anonymous"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<!-- jQuery local fallback -->
+<script>window.jQuery || document.write('<script src="../jquery/jquery-3.3.1.min.js"><\/script>')
+
+</script>
+<!-- Bootstrap JS CDN -->
+<script crossorigin="anonymous"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<!-- Bootstrap JS local fallback -->
+<script>
+  if(typeof($.fn.modal) === 'undefined') {document.write('<script src="../bootstrap-4.2.1-dist/js/bootstrap.min.js"><\/script>')}
+
+</script>
+<!-- Bootstrap CSS local fallback -->
+<div class="hidden" id="bootstrapCssTest"></div>
+<script>
     $(function() {
       if ($('#bootstrapCssTest').is(':visible')) {
         $("head").prepend('<link rel="stylesheet" href="../bootstrap-4.2.1-dist/css/bootstrap.min.css">');
       }
     });
-  </script>
+  
 
-  <!--Navbar-->
-  <nav class="navbar navbar-expand-sm navbar-dark fixed-top navbar-custom">
-    <!--Home Button-->
-    <a class="navbar-brand navbar-brand-custom" href="../index.html">MvB</a>
-    <!--Hamburger Menu-->
-    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    
-    <div class="dropdown dropdown-center navbar-center">
-      <a class="btn btn-sm dropdown-toggle" href="#" role="button" id="dropdown-menu-link" data-toggle="dropdown" aria-haspopup="true"
-         aria-expanded="false">
-        More
-      </a>
-      <div class="dropdown-menu navbar-center dropdown-menu-center" aria-labelledby="dropdown-menu-link">
-        <a class="dropdown-item" href="../index.html#about-me">About Me</a>
-        <a class="dropdown-item" href="../index.html#projects">Projects</a>
-        <!--<a class="dropdown-item" href="../index.html#posts">Posts</a>-->
-        <a class="dropdown-item" href="../index.html#media">Media</a>
-      </div>
+</script>
+
+<!--Navbar-->
+<nav class="navbar navbar-expand-sm navbar-dark fixed-top navbar-custom">
+  <!--Home Button-->
+  <a class="navbar-brand navbar-brand-custom" href="../index.html">MvB</a>
+  <!--Hamburger Menu-->
+  <button class="navbar-toggler" data-target="#myNavbar" data-toggle="collapse" type="button">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="dropdown dropdown-center navbar-center">
+    <a aria-expanded="false" aria-haspopup="true" class="btn btn-sm dropdown-toggle" data-toggle="dropdown"
+       href="#" id="dropdown-menu-link"
+       role="button">
+      More
+    </a>
+    <div aria-labelledby="dropdown-menu-link"
+         class="dropdown-menu navbar-center dropdown-menu-center">
+      <a class="dropdown-item" href="../index.html#about-me">About Me</a>
+      <a class="dropdown-item" href="../index.html#projects">Projects</a>
+      <!--<a class="dropdown-item" href="../index.html#posts">Posts</a>-->
+      <a class="dropdown-item" href="../index.html#media">Media</a>
     </div>
-
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <!--Navbar Buttons-->
-      <ul class="nav navbar-nav ml-auto">
-        <li class = 'ml-auto'><a href="https://github.com/mvanbommel" target="_blank">
-          <img class="navbar-button" src="../images/GitHub-Mark-Light-64px.png" alt="github">
-        </a></li>
-        <li class = 'ml-auto'><a href="https://twitter.com/MattvanBommel" target="_blank">
-          <img class="navbar-button" src="../images/Twitter_Logo_WhiteOnImage.png" alt="twitter">
-        </a></li>
-        <li class = 'ml-auto'><a href="https://www.linkedin.com/in/matthewvanbommel/" target="_blank">
-          <img class="navbar-button" src="../images/In-White-54px-R.png" alt="linkedin">
-        </a></li>
-      </ul>
-    </div>
-  </nav>
-
-
+  </div>
+  
+  <div class="collapse navbar-collapse" id="myNavbar">
+    <!--Navbar Buttons-->
+    <ul class="nav navbar-nav ml-auto">
+      <li class='ml-auto'><a href="https://github.com/mvanbommel" target="_blank">
+        <img alt="github" class="navbar-button" src="../images/GitHub-Mark-Light-64px.png">
+      </a></li>
+      <li class='ml-auto'><a href="https://twitter.com/MattvanBommel" target="_blank">
+        <img alt="twitter" class="navbar-button" src="../images/Twitter_Logo_WhiteOnImage.png">
+      </a></li>
+      <li class='ml-auto'><a href="https://www.linkedin.com/in/matthewvanbommel/" target="_blank">
+        <img alt="linkedin" class="navbar-button" src="../images/In-White-54px-R.png">
+      </a></li>
+    </ul>
+  </div>
+</nav>
 
 
 <div class="container-fluid">
@@ -107,24 +121,30 @@
         </nav>
       </div>
     </div>
-
+    
     <div class="col-md-9">
       <h1>Creating This Website</h1>
       <p>
         <em>Posted: April 14, 2019 (Edited: April 21, 2019)</em>
       </p>
-
-
+      
+      
       <h2 class="linked-header" id="introduction">Introduction</h2>
       <p>
-        I have had a personal website since 2016 when I realized that not only was <a href="https://www.matthewvanbommel.com/">matthewvanbommel.com</a> still
+        I have had a personal website since 2016 when I realized that not only was <a
+          href="https://www.matthewvanbommel.com/">matthewvanbommel.com</a> still
         available,
-        but I could own it for just $10 a year! Combined with the realization that I could host the site on <a href="https://pages.github.com/">GitHub
-        Pages</a> for free, it became a no-brainer to have a personal website. Since then, my site has gone through several design iterations, none of which I
-        have been entirely satisfied with. Given that dissatisfaction, and an increased interest in building web applications, I decided to do a complete
-        redesign of my website, building it from the ground up. This task felt intimidating for someone whose previous web development experience
+        but I could own it for just $10 a year! Combined with the realization that I could host the
+        site on <a href="https://pages.github.com/">GitHub
+        Pages</a> for free, it became a no-brainer to have a personal website. Since then, my site
+        has gone through several design iterations, none of which I
+        have been entirely satisfied with. Given that dissatisfaction, and an increased interest in
+        building web applications, I decided to do a complete
+        redesign of my website, building it from the ground up. This task felt intimidating for
+        someone whose previous web development experience
         consisted
-        entirely of a "How Websites Work" course in my college undergrad and editing templates to build previous iterations of this website, thus I set out
+        entirely of a "How Websites Work" course in my college undergrad and editing templates to
+        build previous iterations of this website, thus I set out
         with realistic goals in mind:
       </p>
       <ol>
@@ -132,42 +152,71 @@
         <li>Create a functioning website (and hopefully make it look decent)</li>
       </ol>
       
+      <p>
+        A portion of the code used in this project is available on <a
+          href="https://github.com/mvanbommel/nba_scorekeeper_bias">GitHub</a>. More detailed
+        accounts of this project are linked in the <a href="#publications">Publications Section</a>
+        below.
+      </p>
+      
       <h2 class="linked-header" id="bootstrap">Bootstrap</h2>
       <p>
-        One of the first decisions I made is that I would be using the <a href="https://getbootstrap.com/">Bootstrap</a> framework. Bootstrap was originally
-        created at Twitter and is now one of the most popular front-end frameworks, while being completely open source. Bootstrap emphasizes responsive web
-        design, allowing websites to look good across a variety of screen sizes and devices: a near necessity in today's digital age. Having created <a
+        One of the first decisions I made is that I would be using the <a
+          href="https://getbootstrap.com/">Bootstrap</a> framework. Bootstrap was originally
+        created at Twitter and is now one of the most popular front-end frameworks, while being
+        completely open source. Bootstrap emphasizes responsive web
+        design, allowing websites to look good across a variety of screen sizes and devices: a near
+        necessity in today's digital age. Having created <a
           href="https://shiny.rstudio.com/">Shiny</a>
         apps, I was also a little familiar with the basic concepts of Bootstrap,
-        specifically the grid system that underlies the basic design structure. Getting up and running with Bootstrap was pretty straightforward using this
-        <a href="http://bootstrap.themes.guide/how-to.html">tutorial</a> to understand the basic concepts and making use of its
-        excellent <a href="https://getbootstrap.com/docs/4.3/getting-started/introduction/">documentation</a> to fill in any gaps.
-
+        specifically the grid system that underlies the basic design structure. Getting up and
+        running with Bootstrap was pretty straightforward using this
+        <a href="http://bootstrap.themes.guide/how-to.html">tutorial</a> to understand the basic
+        concepts and making use of its
+        excellent <a href="https://getbootstrap.com/docs/4.3/getting-started/introduction/">documentation</a>
+        to fill in any gaps.
+      
       </p>
       <p>
-        On the whole, I found Bootstrap to be fairly intuitive, and pretty good at helping to scale design to different devices - certainly incredibly simple
-        compared to the alternative of building everything from scratch myself. However I did have one major Bootstrap related headache during this process.
-        The official Bootstrap website has some great <a href="https://getbootstrap.com/docs/4.3/examples/">examples</a> of some of the different features
-        and styles you can implement. As such, I was using the <a href="https://getbootstrap.com/docs/4.3/examples/dashboard/">dashboard</a> example to
-        figure out how to add the sidebar (not displayed on mobile) and though I appeared to completely mirror the code, it
-        looked different on my site than it did in the example. After a lot of search and much confusion, I finally realized that I was using an outdated
-        version of Bootstrap - I was using v3 (thanks to copying and pasting a Stack Overflow snippet) while the example was using the up to date v4.
+        On the whole, I found Bootstrap to be fairly intuitive, and pretty good at helping to scale
+        design to different devices - certainly incredibly simple
+        compared to the alternative of building everything from scratch myself. However I did have
+        one major Bootstrap related headache during this process.
+        The official Bootstrap website has some great <a
+          href="https://getbootstrap.com/docs/4.3/examples/">examples</a> of some of the different
+        features
+        and styles you can implement. As such, I was using the <a
+          href="https://getbootstrap.com/docs/4.3/examples/dashboard/">dashboard</a> example to
+        figure out how to add the sidebar (not displayed on mobile) and though I appeared to
+        completely mirror the code, it
+        looked different on my site than it did in the example. After a lot of search and much
+        confusion, I finally realized that I was using an outdated
+        version of Bootstrap - I was using v3 (thanks to copying and pasting a Stack Overflow
+        snippet) while the example was using the up to date v4.
         Thankful to
         have finally found
         the
         source of the issue, I updated
-        my references to v4, only to have my site look completely different than it did in v3. Despite my defeated feeling and my decision to give up for the
-        night, bringing the site back to its previous glory proved a fairly simple task thanks to Bootstrap's excellent <a
-          href="https://getbootstrap.com/docs/4.0/migration/">migration documentation</a>. Aside from that mix-up, it was fairly smooth sailing with
-        Bootstrap (at least relative to the rest of my struggles) and I certainly recommend it to someone building their own responsive website.
+        my references to v4, only to have my site look completely different than it did in v3.
+        Despite my defeated feeling and my decision to give up for the
+        night, bringing the site back to its previous glory proved a fairly simple task thanks to
+        Bootstrap's excellent <a
+          href="https://getbootstrap.com/docs/4.0/migration/">migration documentation</a>. Aside
+        from that mix-up, it was fairly smooth sailing with
+        Bootstrap (at least relative to the rest of my struggles) and I certainly recommend it to
+        someone building their own responsive website.
       </p>
       
       <h2 class="linked-header" id="design">Design</h2>
       <p>
-        The overall structure of the page follows a fairly standard Bootstrap layout: a <a href="https://getbootstrap.com/docs/4.3/components/navbar/">navbar
-      </a> at the top, followed by the content, and a footer at the bottom - with an additional sidebar on the content pages for screens with a wide enough
-        view. The navbar and sidebar are both fixed - meaning they maintain constant position on the screen as the user scrolls. Finally, the home page makes
-        use of a full page background image, which scales to fill the screen regardless of its dimensions.
+        The overall structure of the page follows a fairly standard Bootstrap layout: a <a
+          href="https://getbootstrap.com/docs/4.3/components/navbar/">navbar
+      </a> at the top, followed by the content, and a footer at the bottom - with an additional
+        sidebar on the content pages for screens with a wide enough
+        view. The navbar and sidebar are both fixed - meaning they maintain constant position on the
+        screen as the user scrolls. Finally, the home page makes
+        use of a full page background image, which scales to fill the screen regardless of its
+        dimensions.
       </p>
       
       <h5>Responsiveness</h5>
@@ -176,59 +225,79 @@
       </p>
       <ul>
         <li>columns are automatically resized so that the full width of the screen is used</li>
-        <li>columns placed side-by-side are stacked vertically when the screen display size is below a defined width</li>
+        <li>columns placed side-by-side are stacked vertically when the screen display size is below
+          a defined width
+        </li>
         <li>images scale in size with the screen dimensions</li>
       </ul>
       <p>
-        I added a few additional components of responsive design. The main image on the homepage switches depending on the screen ratio: wide screens present
-        an image of a court stretching east to west while tall screens present a court spanning north to south. In a similar vein, narrow screens have no
-        sidebar displayed on the content pages to maximize screen real estate. The navbar icons are also moved to a dropdown menu on narrow screens to ensure
+        I added a few additional components of responsive design. The main image on the homepage
+        switches depending on the screen ratio: wide screens present
+        an image of a court stretching east to west while tall screens present a court spanning
+        north to south. In a similar vein, narrow screens have no
+        sidebar displayed on the content pages to maximize screen real estate. The navbar icons are
+        also moved to a dropdown menu on narrow screens to ensure
         they never span the entire screen width and overlap the home button.
       </p>
       <p>
         I was surprised to learn that Bootstrap
-        does not include a method to adjust font size as the screen dimension changes, however I was able to accomplish this feature using the
-        <code>calc()</code> function as presented in this <a href="https://css-tricks.com/snippets/css/fluid-typography/">guide</a> on fluid typography. I
-        opted for a minimum font size of 16px that stretches all the way up to 24px for larger displays. These sizes are much larger than I originally
-        anticipated, but were strongly supported in this <a href="https://learnui.design/blog/mobile-desktop-website-font-size-guidelines.html">guide</a>.
+        does not include a method to adjust font size as the screen dimension changes, however I was
+        able to accomplish this feature using the
+        <code>calc()</code> function as presented in this <a
+          href="https://css-tricks.com/snippets/css/fluid-typography/">guide</a> on fluid
+        typography. I
+        opted for a minimum font size of 16px that stretches all the way up to 24px for larger
+        displays. These sizes are much larger than I originally
+        anticipated, but were strongly supported in this <a
+          href="https://learnui.design/blog/mobile-desktop-website-font-size-guidelines.html">guide</a>.
         One gem from the guide: the publishing platform <a
-          href="https://medium.com/">Medium</a> has a default text size of 21px! When text is the main feature of a site, making sure it is easy to read is of
+          href="https://medium.com/">Medium</a> has a default text size of 21px! When text is the
+        main feature of a site, making sure it is easy to read is of
         critical importance.
       </p>
       
       <h5>Colour</h5>
       <p>
-        Given that the majority of content on this site is going to be text based posts or descriptions of projects, I tried to emphasize readability in my
-        choices for the end design: thus the dark gray text on a white background. For continuity, I repeated the same shade of gray for the header and
-        footer, inverting the text and icons to white. Hopefully the result is a clean and simple design that doesn't distract or remove any attention from
+        Given that the majority of content on this site is going to be text based posts or
+        descriptions of projects, I tried to emphasize readability in my
+        choices for the end design: thus the dark gray text on a white background. For continuity, I
+        repeated the same shade of gray for the header and
+        footer, inverting the text and icons to white. Hopefully the result is a clean and simple
+        design that doesn't distract or remove any attention from
         the actual content.
       </p>
       
       <div class="container">
         <figure class="figure">
-          <img src="../images/black_homepage.png" class="img-fluid" alt="Black Home Page">
+          <img alt="Black Home Page" class="img-fluid" src="../images/black_homepage.png">
           <figcaption class="figure-caption">A previous iteration of the home page.</figcaption>
         </figure>
       </div>
       
       <p>
         The final emphasis on readability is a stark contrast to the inverted (white text on black
-        background) initial design I selected. There are many things I like about inverted designs: they stand out and can look super slick if done well.
-        I especially liked the aesthetic on the home page of this site. However, in researching best practices for dark design, I found a <a
+        background) initial design I selected. There are many things I like about inverted designs:
+        they stand out and can look super slick if done well.
+        I especially liked the aesthetic on the home page of this site. However, in researching best
+        practices for dark design, I found a <a
           href="https://ianstormtaylor.com/design-tip-never-use-black/">few</a> <a
-          href="https://www.webdesignerdepot.com/2009/08/the-dos-and-donts-of-dark-web-design/">articles</a> that talked me down from a dark design, to
+          href="https://www.webdesignerdepot.com/2009/08/the-dos-and-donts-of-dark-web-design/">articles</a>
+        that talked me down from a dark design, to
         something more traditional, and I think the decision improved the final product.
       </p>
       
-
       
       <h5>Icons</h5>
       <p>
-        Most companies make it very easy to use their logos to link to their websites. I found brand resource pages for the three external links
+        Most companies make it very easy to use their logos to link to their websites. I found brand
+        resource pages for the three external links
         in my
-        navigation bar (<a href="https://github.com/logos">GitHub</a>, <a href="https://about.twitter.com/en_us/company/brand-resources.html">Twitter</a>,
-        and <a href="https://brand.linkedin.com/visual-identity/logo">LinkedIn</a>) where I could download the logos with transparent backgrounds. Additional
-        icons (like on the project boxes on the homepage) were obtained from <a href="https://icons8.com/">Icons8</a> - a great library of icons that even
+        navigation bar (<a href="https://github.com/logos">GitHub</a>, <a
+          href="https://about.twitter.com/en_us/company/brand-resources.html">Twitter</a>,
+        and <a href="https://brand.linkedin.com/visual-identity/logo">LinkedIn</a>) where I could
+        download the logos with transparent backgrounds. Additional
+        icons (like on the project boxes on the homepage) were obtained from <a
+          href="https://icons8.com/">Icons8</a> - a great library of icons that even
         lets you edit the colors and backgrounds for many of them.
       </p>
       
@@ -236,107 +305,156 @@
       <h5>Chrome's Inspect Tool</h5>
       <p>
         Google Chrome's <a
-          href="https://developers.google.com/web/tools/chrome-devtools/">DevTools</a> are a set of tools built into Chrome (other browsers have
-        similar toolsets). I knew about DevTools before I started this project but I did not know how powerful they could be. Some highlights include:
+          href="https://developers.google.com/web/tools/chrome-devtools/">DevTools</a> are a set of
+        tools built into Chrome (other browsers have
+        similar toolsets). I knew about DevTools before I started this project but I did not know
+        how powerful they could be. Some highlights include:
       </p>
       <ul>
-        <li>simulating mobile devices (and other screen sizes) to see how a website will appear in different environments</li>
+        <li>simulating mobile devices (and other screen sizes) to see how a website will appear in
+          different environments
+        </li>
         <li>determining the size, padding, and margins of different components</li>
-        <li>figuring out exactly which styling elements are impacting a component, and determining the source for each element</li>
+        <li>figuring out exactly which styling elements are impacting a component, and determining
+          the source for each element
+        </li>
         <li>live testing of HTML and CSS changes, without editing your actual source code</li>
       </ul>
       <p>
-        This project involved many hours spent using DevTools, and while progress was quite slow at first, I have drastically increased my skills in using
+        This project involved many hours spent using DevTools, and while progress was quite slow at
+        first, I have drastically increased my skills in using
         the tools and tracking down errors throughout the process.
       </p>
       
       <h5>Styles Ordering</h5>
       <p>
-        At the start of this project, I naively put no thought into the ordering of style elements (including placing the reference to Bootstrap's stylesheet
-        after the reference to my custom stylesheet and being confused when I could not alter Bootstrap styles). However, several experiences have taught me
-        that the ordering of styles is crucial, most simply because if multiple styles conflict, priority is given to the last style applied.
+        At the start of this project, I naively put no thought into the ordering of style elements
+        (including placing the reference to Bootstrap's stylesheet
+        after the reference to my custom stylesheet and being confused when I could not alter
+        Bootstrap styles). However, several experiences have taught me
+        that the ordering of styles is crucial, most simply because if multiple styles conflict,
+        priority is given to the last style applied.
       </p>
       
       <h5>The Important Keyword</h5>
       <p>
-        At one stage, I could not figure out how to override a particular Bootstrap style with my own custom styling. After a quick search, I came across the
-        <code>!important</code> keyword, which can be added to a line of styling to give it priority (ignoring the order of styles) - an excellent solution!
-        Soon my stylesheet grew filled with <code>!important</code> keywords to solve all sorts of styling issues. At this point I looked at my stylesheet
-        and thought "this cannot be good practice". Further searching confirmed that thought. Sure, I had accomplished the desired results, but using a
-        sort of 'cheat code' that would complicate future development. Removing all <code>!important</code> keywords involved finding the actual causes of
-        the conflicts, and determining the correct way to resolve them. This corrective process resulted in a deeper understanding of the codebase and
+        At one stage, I could not figure out how to override a particular Bootstrap style with my
+        own custom styling. After a quick search, I came across the
+        <code>!important</code> keyword, which can be added to a line of styling to give it priority
+        (ignoring the order of styles) - an excellent solution!
+        Soon my stylesheet grew filled with <code>!important</code> keywords to solve all sorts of
+        styling issues. At this point I looked at my stylesheet
+        and thought "this cannot be good practice". Further searching confirmed that thought. Sure,
+        I had accomplished the desired results, but using a
+        sort of 'cheat code' that would complicate future development. Removing all
+        <code>!important</code> keywords involved finding the actual causes of
+        the conflicts, and determining the correct way to resolve them. This corrective process
+        resulted in a deeper understanding of the codebase and
         facilitated easier future changes.
       </p>
       
       <h5>Media Queries</h5>
       <p>
-        CSS <code>@media</code> queries return information about the device accessing your website and thus allow the content to be altered depending on factors including
-        the type, size, or orientation of the device. Bootstrap uses <code>@media</code> queries in creating responsive design and it is straightforward to add
-        additional custom <code>@media</code> queries. This site uses <code>@media</code> queries to determine the orientation of the court on the homepage and whether to display the
+        CSS <code>@media</code> queries return information about the device accessing your website
+        and thus allow the content to be altered depending on factors including
+        the type, size, or orientation of the device. Bootstrap uses <code>@media</code> queries in
+        creating responsive design and it is straightforward to add
+        additional custom <code>@media</code> queries. This site uses <code>@media</code> queries to
+        determine the orientation of the court on the homepage and whether to display the
         sidebar.
       </p>
       
       <h5>Sidebar Links</h5>
       <p>
-        Linking to a section (in my case a header) on a page is fairly straightforward through the use of an <code>id</code>. However, the links move the
+        Linking to a section (in my case a header) on a page is fairly straightforward through the
+        use of an <code>id</code>. However, the links move the
         header of interest to
-        the very top of the page, which is directly behind my fixed navbar. Thus I needed a solution to move the header of interest to just below the top of
-        the page. I was pleased to realize that padding proved to be a fairly elegant solution to this issue: padding does not change the starting point of a
-        header, so the links would lead to the top of the padding rather than where the text begins. As such, I was able to fix the issue using the
+        the very top of the page, which is directly behind my fixed navbar. Thus I needed a solution
+        to move the header of interest to just below the top of
+        the page. I was pleased to realize that padding proved to be a fairly elegant solution to
+        this issue: padding does not change the starting point of a
+        header, so the links would lead to the top of the padding rather than where the text begins.
+        As such, I was able to fix the issue using the
         following class:
       </p>
       <pre>
         <code>
-          .linked-header {
-              padding-top: 45px; /* Height of navbar */
-              padding-bottom: 20px; /* Add padding on bottom to even it out a bit */
-          }
+  .linked-header {
+      padding-top: 45px; /* Height of navbar */
+      padding-bottom: 20px; /* Add padding on bottom to even it out a bit */
+  }
         </code>
       </pre>
       
       <h5>Different Browsers and Operating Systems</h5>
       <p>
-        Different browsers can display the same website differently, which is why I was sure to test my site with several common browsers. I installed <a
-          href="https://www.google.com/chrome/">Chrome</a>, <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a>, and <a
-          href="https://www.opera.com/">Opera</a> locally on the Linux machine I used during development. I was able to test <a
-          href="https://www.microsoft.com/en-us/windows/microsoft-edge">Edge</a> on the same machine by using the free Edge testing offer from <a
+        Different browsers can display the same website differently, which is why I was sure to test
+        my site with several common browsers. I installed <a
+          href="https://www.google.com/chrome/">Chrome</a>, <a
+          href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a>, and <a
+          href="https://www.opera.com/">Opera</a> locally on the Linux machine I used during
+        development. I was able to test <a
+          href="https://www.microsoft.com/en-us/windows/microsoft-edge">Edge</a> on the same machine
+        by using the free Edge testing offer from <a
           href="https://www.browserstack.com/test-on-microsoft-edge-browser">BrowserStack</a>.
       </p>
       <p>
-        While I knew before I began this project that it would be important to test the results across browsers, I did not realize it is also important to
-        test across operating systems. Even keeping the browser constant, sites can be displayed differently across operating systems. For example, the icons
-        in my navbar looked great in Chrome on both Linux and Windows, but were stretched out when viewed on a Mac. Typically, you need either access to
-        copies of each operating system you want to test or a willingness to pay for a service (like BrowserStack mentioned above) that can generate virtual
-        environments of browser and operating system combinations. However, I discovered the free <a href="http://browsershots.org/">Browser Shots</a> site,
-        which is able to capture screenshots of a site from a variety of browsers and operating systems. While the service has its restrictions (no ability
-        to live test, slow generation of screen shots, limited number of tests per day) it can be a great way to perform a quick test without spending any
+        While I knew before I began this project that it would be important to test the results
+        across browsers, I did not realize it is also important to
+        test across operating systems. Even keeping the browser constant, sites can be displayed
+        differently across operating systems. For example, the icons
+        in my navbar looked great in Chrome on both Linux and Windows, but were stretched out when
+        viewed on a Mac. Typically, you need either access to
+        copies of each operating system you want to test or a willingness to pay for a service (like
+        BrowserStack mentioned above) that can generate virtual
+        environments of browser and operating system combinations. However, I discovered the free <a
+          href="http://browsershots.org/">Browser Shots</a> site,
+        which is able to capture screenshots of a site from a variety of browsers and operating
+        systems. While the service has its restrictions (no ability
+        to live test, slow generation of screen shots, limited number of tests per day) it can be a
+        great way to perform a quick test without spending any
         money.
       </p>
       <p>
-        Hopefully, I have been able to catch all the inconsistencies across browsers and operating systems, but there is certainly a possibility a bug has
-        slipped through the cracks. So if you notice anything that you think might look a little off with this site, be sure to let me know!
+        Hopefully, I have been able to catch all the inconsistencies across browsers and operating
+        systems, but there is certainly a possibility a bug has
+        slipped through the cracks. So if you notice anything that you think might look a little off
+        with this site, be sure to let me know!
       </p>
       
       <h2 class="linked-header" id="conclusion">Conclusion</h2>
       <p>
-        Reflecting on my two stated goals from the introduction, I have no doubt that I vastly increased my knowledge of HTML, CSS, and web design throughout
-        the process of creating this website and I succeeded in creating a functional website (which I would say looks at least half decent, if not all the
-        way there). I also gained a lot of appreciation for front end development, UX design, and UI design.
+        Reflecting on my two stated goals from the introduction, I have no doubt that I vastly
+        increased my knowledge of HTML, CSS, and web design throughout
+        the process of creating this website and I succeeded in creating a functional website (which
+        I would say looks at least half decent, if not all the
+        way there). I also gained a lot of appreciation for front end development, UX design, and UI
+        design.
       </p>
       <p>
-        Would I recommend the process of building a website from the ground up? For most people, the answer would be no. This process took much more time
-        than I originally anticipated, much of it spent either staring at DevTools trying to figure out why the change I made did not actually change
-        anything or searching through Stack Overflow in search of someone with an identical (or at least similar enough) situation. Given the huge variety of
-        website building tools and templates out there, if your main goal is simply to create a website, you can get a lot more for a lot less work by not
-        starting from scratch. But if your goal is to increase your knowledge of web design or the tools associated with it and you are realistic about the
-        time commitment, then building your own website can be a great option. For me, building a website presented a similar problem solving aspect to
-        traditional coding but the methods to solve those problems were often drastically different and required a new way of thinking. Solving these
-        problems certainly became easier as I moved further along the process and the end result of getting a new component functioning or looking how I
+        Would I recommend the process of building a website from the ground up? For most people, the
+        answer would be no. This process took much more time
+        than I originally anticipated, much of it spent either staring at DevTools trying to figure
+        out why the change I made did not actually change
+        anything or searching through Stack Overflow in search of someone with an identical (or at
+        least similar enough) situation. Given the huge variety of
+        website building tools and templates out there, if your main goal is simply to create a
+        website, you can get a lot more for a lot less work by not
+        starting from scratch. But if your goal is to increase your knowledge of web design or the
+        tools associated with it and you are realistic about the
+        time commitment, then building your own website can be a great option. For me, building a
+        website presented a similar problem solving aspect to
+        traditional coding but the methods to solve those problems were often drastically different
+        and required a new way of thinking. Solving these
+        problems certainly became easier as I moved further along the process and the end result of
+        getting a new component functioning or looking how I
         wanted was at times incredibly rewarding.
       </p>
       <p>
-        Finally, I want to stress that this website is still a work in progress. So if you see something that does not appear to be functioning how it
-        should, or have any ideas or suggestions on how it can be improved, feel free to reach out to me! You can find my contact information in the footer
+        Finally, I want to stress that this website is still a work in progress. So if you see
+        something that does not appear to be functioning how it
+        should, or have any ideas or suggestions on how it can be improved, feel free to reach out
+        to me! You can find my contact information in the footer
         at the bottom of the page.
       </p>
     </div>
@@ -349,14 +467,16 @@
       <p class="no-margin">Contact</p>
       <ul class="list-unstyled no-margin">
         <li><a href="https://twitter.com/MattvanBommel" target="_blank">Twitter</a></li>
-        <li><a href="https://www.linkedin.com/in/matthewvanbommel/" target="_blank">LinkedIn</a></li>
-        <li><a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/matthewvanbommel/" target="_blank">LinkedIn</a>
+        </li>
+        <li><a aria-controls="collapseExample" aria-expanded="false" data-toggle="collapse" href="#collapseExample"
+               role="button">Email</a></li>
       </ul>
       <div class="collapse" id="collapseExample">
-          matthew[DOT]vbommel[AT]gmail[DOT]com
+        matthew[DOT]vbommel[AT]gmail[DOT]com
       </div>
     </div>
-
+  
   </div>
 </footer>
 

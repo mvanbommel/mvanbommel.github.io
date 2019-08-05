@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-101862602-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sacramento Dispatch Response Time App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body class="below-navbar">
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<!-- jQuery local fallback -->
+<script>window.jQuery || document.write('<script src="../jquery/jquery-3.3.1.min.js"><\/script>')
+</script>
+<!-- Bootstrap JS CDN -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+<!-- Bootstrap JS local fallback -->
+<script>
+  if(typeof($.fn.modal) === 'undefined') {document.write('<script src="../bootstrap-4.2.1-dist/js/bootstrap.min.js"><\/script>')}
+</script>
+<!-- Bootstrap CSS local fallback -->
+<div id="bootstrapCssTest" class="hidden"></div>
+<script>
+    $(function() {
+      if ($('#bootstrapCssTest').is(':visible')) {
+        $("head").prepend('<link rel="stylesheet" href="../bootstrap-4.2.1-dist/css/bootstrap.min.css">');
+      }
+    });
+  
+</script>
+
+<!--Navbar-->
+<nav class="navbar navbar-expand-sm navbar-dark fixed-top navbar-custom">
+  <!--Home Button-->
+  <a class="navbar-brand navbar-brand-custom" href="../index.html">MvB</a>
+  <!--Hamburger Menu-->
+  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="dropdown dropdown-center navbar-center">
+    <a class="btn btn-sm dropdown-toggle" href="#" role="button" id="dropdown-menu-link"
+       data-toggle="dropdown" aria-haspopup="true"
+       aria-expanded="false">
+      More
+    </a>
+    <div class="dropdown-menu navbar-center dropdown-menu-center"
+         aria-labelledby="dropdown-menu-link">
+      <a class="dropdown-item" href="../index.html#about-me">About Me</a>
+      <a class="dropdown-item" href="../index.html#projects">Projects</a>
+      <!--<a class="dropdown-item" href="../index.html#posts">Posts</a>-->
+      <a class="dropdown-item" href="../index.html#media">Media</a>
+    </div>
+  </div>
+  
+  <div class="collapse navbar-collapse" id="myNavbar">
+    <!--Navbar Buttons-->
+    <ul class="nav navbar-nav ml-auto">
+      <li class="ml-auto"><a href="https://github.com/mvanbommel" target="_blank">
+        <img class="navbar-button" src="../images/GitHub-Mark-Light-64px.png" alt="github">
+      </a></li>
+      <li class="ml-auto"><a href="https://twitter.com/MattvanBommel" target="_blank">
+        <img class="navbar-button" src="../images/Twitter_Logo_WhiteOnImage.png" alt="twitter">
+      </a></li>
+      <li class="ml-auto"><a href="https://www.linkedin.com/in/matthewvanbommel/" target="_blank">
+        <img class="navbar-button" src="../images/In-White-54px-R.png" alt="linkedin">
+      </a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <div class="row">
+        <nav class="col-md-2 hide-on-narrow-screen sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link sidebar-link active" href="#introduction">Introduction</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link sidebar-link active" href="#design">Design</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link sidebar-link active" href="#lessons">Lessons</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link sidebar-link active" href="#conclusion">Conclusion</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    
+    <div class="col-md-9">
+      <h1>Sacramento Police Dispatch Data App</h1>
+      <p>
+        <em>Posted: August 5, 2019</em>
+      </p>
+      
+      <h2 class="linked-header" id="introduction">Introduction</h2>
+      <p>
+        The goal of this project was to create an interactive application allowing users to gain
+        insight into the <a
+          href="http://data.cityofsacramento.org/datasets/9efe7653009b448f8d177c1da0cc068f_0">Sacramento
+        Police Department Dispatch Data</a> available on the
+        City of Sacramento <a href="http://data.cityofsacramento.org/">Open Data Portal</a>. While
+        it is fantastic that the city makes the data publicly
+        available, it is very difficult to gain any insight into the data, especially for someone
+        who may not be technically inclined. Thus, hopefully the app
+        can bridge the gap between the data and the user.
+      </p>
+      <p>
+        The app was created using the <a href="https://shiny.rstudio.com/">Shiny</a> package in <a
+          href="https://www.r-project.org/">R</a>. The map makes
+        use of the <a href="https://rstudio.github.io/leaflet/">Leaflet</a> package. The data is
+        pulled via an <a href="https://developers.arcgis.com/rest/">ArcGIS REST API</a> using a <a
+          href="https://github.com/mvanbommel/esri2sf">fork</a> of
+        the <a href="https://github.com/yonghah/esri2sf">esri2sf</a> package.
+      </p>
+      <p>
+        The code for the project is available on <a
+          href="https://github.com/mvanbommel/SacCrimeData">GitHub</a>.
+      </p>
+      <p>
+        The app is currently live and can be viewed at <a
+          href="https://mvanbommel.shinyapps.io/SacCrimeData/">mvanbommel.shinyapps.io/SacCrimeData</a>
+      </p>
+      
+      
+      <h2 class="linked-header" id="design">Design</h2>
+      <p>
+        The basic design makes use of the <a href="https://rstudio.github.io/shinydashboard/">shinydashboard</a>
+        package. The main body of the page is the
+        map showing the locations of the filtered dispatch calls, highlighting spatial element of
+        the data. The map includes both a high
+        level overview of the location
+        distribution (via the heatmap) and detailed information on individual calls (via the
+        markers). The dashboard sidebar is then free to be used for
+        inputs to filter the data displayed on the map, and can be collapsed to provide additional
+        space for the map. In addition to the collapsible sidebar,
+        Shiny uses <a href="https://getbootstrap.com/">Bootstrap</a> to present a responsive design,
+        allowing the app to look good on a variety of screen sizes.
+      </p>
+      
+      <h2 class="linked-header" id="lessons">Lessons</h2>
+      <h5>Open Data Difficulties</h5>
+      <p>
+        Working with the open data set caused several difficulties throughout the process. First,
+        there is little documentation that I could find, leaving me
+        to guess, infer, and Google my way through much of the process. I was not even able to find
+        descriptions of the variables. Further, whenever
+        something changed with the data set (outlined in the next paragraph) there appeared to be no
+        records or notice indicating such.
+      </p>
+      <p>
+        Next, the data set changed over the course of the development of the app. Previously, there
+        had been several 'time' columns (Received Time, En Route
+        Time, At Scene Time, etc.) outlining the time of progress throughout the police response.
+        However, at some point these columns were removed, and the
+        time information was lost. Thus, while I had been creating a visualization to display and
+        interact with response times, I had to remove it once the
+        information stopped being provided. Additionally, column name and order changes forced me to
+        continually edit the code to keep everything functioning.
+      </p>
+      <p>
+        Finally, sometimes the API used to access the data stops working. Once I realized this was
+        an artifact of the API itself and not caused by my code,
+        it forced me to add a backup option - a saved data set that could be accessed at times the
+        API stopped functioning.
+      </p>
+      
+      <h5>Customizing Leaflet</h5>
+      <p>
+        <a href="https://leafletjs.com/">Leaflet</a> is an open-source JavaScript library for
+        creating interactive and highly customizable maps. The <a
+          href="https://rstudio.github.io/leaflet/">Leaflet R package</a> does an excellent job at
+        bringing many of the features of Leaflet into the R
+        environment (especially when combined with the <a
+          href="https://bhaskarvk.github.io/leaflet.extras/">leaflet.extras</a> package), but of
+        course it will
+        have its limitations. One such limitation I encountered was using the draw toolbar, without
+        treating the drawings as layers. Treating the drawings as
+        layers is the expected behaviour, however it did not provide the functionality I needed.
+        Thus, since no layers were being created, the delete button
+        in the draw toolbar was always disabled, even when there were drawn shapes that could
+        have been deleted, as shown in the screenshot below.
+      </p>
+      <div class="container">
+        <figure class="figure">
+          <img src="../images/leaflet_disabled_delete.png" class="img-fluid"
+               alt="Disabled Leaflet Delete Button">
+          <figcaption class="figure-caption">The disabled Leaflet delete button</figcaption>
+        </figure>
+      </div>
+      <p>
+        To get around this limitation, I had to hijack the button's functionality using JavaScript.
+        Specifically, I use the jQuery <a
+          href=https://api.jquery.com/replaceWith/"><code>replaceWith()</code></a> method to replace
+        the Leaflet button with my own custom button. The exact
+        function I used was:
+      </p>
+      <pre><code>  function changeDeleteButton() {
+    // If leaflet delete button is present, replace it with custom button
+    if ( $( "a.leaflet-draw-edit-remove" ).length ) {
+      $( "a.leaflet-draw-edit-remove" ).replaceWith( "&lt;button class='delete-button' title='Clear Rectangle'&gt; &lt;/button&gt;" );
+    }
+  }</code></pre>
+      <p>
+        I then used custom CSS to style the button and made use of Shiny's ability to <a
+          href="https://shiny.rstudio.com/articles/communicating-with-js.html">communicate via
+        JavaScript</a> to create a new input value and change its
+        value whenever the button is pressed, using the JavaScript functions:
+      </p>
+      
+      <pre><code>  $( document ).on("shiny:sessioninitialized", function(event) {
+    Shiny.setInputValue("clear_rectangle", "FALSE");
+  });
+        
+  $(document).on('click tap', '.delete-button', function () {
+    // When delete button is clicked, change input$clear_rectangle to TRUE
+    Shiny.setInputValue("clear_rectangle", "TRUE");
+  });
+  
+  Shiny.addCustomMessageHandler('resetInput', function(variableName) {
+    // Set input variable to NULL
+    Shiny.setInputValue(variableName, null);
+  });</code></pre>
+      
+      <p>
+        Along with the Shiny code:
+      </p>
+      
+      
+      <pre><code>  observeEvent(input$clear_rectangle, {
+    if (input$clear_rectangle == 'TRUE') {
+      session$sendCustomMessage(type = "resetInput", message = "clear_rectangle")
+    }
+  })</code></pre>
+      
+      <p>
+        which invokes the CustomMessageHandler defined above. The result of all this code, is a
+        customized, enabled delete button in the draw toolbar:
+      </p>
+      <div class="container">
+        <figure class="figure">
+          <img src="../images/leaflet_enabled_delete.png" class="img-fluid"
+               alt="Custom Enabled Leaflet Delete Button">
+          <figcaption class="figure-caption">The custom enabled Leaflet delete button</figcaption>
+        </figure>
+      </div>
+      
+      
+      <h5>Querying the API</h5>
+      <p>
+        All data in the app (with the exception of the backup in case the API is down) is queried
+        from an ArcGIS REST API. Constructing the queries was a
+        learning process and while there is some <a
+          href="https://developers.arcgis.com/rest/services-reference/query-feature-service-.htm">documentation</a>,
+        much of the process involved trial and error. Since the inputs and filters are interactive,
+        I also had to programmatically construct the queries,
+        based on the user selected values.
+      </p>
+      <p>
+        A huge help in the querying process was the <a href="https://github.com/yonghah/esri2sf">esri2sf</a>
+        package. The package takes a query, retrieves
+        the corresponding JSON from the API, and then converts the result to a data frame. I then
+        edited the package to allow for limits and offsets to also
+        be passed to the API. The limit parameter defines how many results (rows) to return, while
+        the offset parameter defines the number of results (rows)
+        to skip. Thus a query with a limit of 100 and an offset of 0 will have distinct results from
+        a query with a limit of 100 and an offset of 100. Since
+        the API limits the number of results returned to 1000, these additional
+        parameters add control over exactly which results are
+        returned. The edited package is available for download on <a
+          href="https://github.com/mvanbommel/esri2sf">GitHub</a> or can be installed in R using the
+        command: <code>install_github(repo = "mvanbommel/esri2sf")</code> from the <a
+          href="https://cran.r-project.org/web/packages/remotes/index.html">remotes
+      </a> package.
+      </p>
+      
+      <h2 class="linked-header" id="conclusion">Conclusion</h2>
+      <p>
+        The app took much longer to develop than I originally anticipated. I began with overly
+        ambitious ideas and plans, and once I decided
+        to simplify the app to its core components, the development process went much more smoothly.
+        I also changed much more than I originally anticipated
+        after soliciting some initial feedback. With a fairly simple app, I figured it would be easy
+        to make intuitive decisions and that any feedback would
+        be minor. However, the value of outside opinions quickly became obvious and I believe the
+        app improved significantly because of them.
+      </p>
+      <p>
+        Overall, I am quite pleased with the end product. I believe the app is elegant and
+        functional, and greatly improves the accessibility and
+        interactivity of the data presented. If you have not taken a look yet, be sure to go play
+        around with the <a
+          href="https://mvanbommel.shinyapps.io/SacCrimeData/">live app</a> or to download the <a
+          href="https://github.com/mvanbommel/SacCrimeData">source
+        code</a>. If you arrive at any interesting insights or conclusions from the data, be sure to
+        share them with me! And also feel free to reach out with any
+        feedback you have to help improve the app even further.
+      </p>
+    
+    </div>
+  </div>
+</div>
+
+<footer class="footer small-font">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <p class="no-margin">Contact</p>
+      <ul class="list-unstyled no-margin">
+        <li><a href="https://twitter.com/MattvanBommel" target="_blank">Twitter</a></li>
+        <li><a href="https://www.linkedin.com/in/matthewvanbommel/" target="_blank">LinkedIn</a>
+        </li>
+        <li><a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+               aria-controls="collapseExample">Email</a></li>
+      </ul>
+      <div class="collapse" id="collapseExample">
+        matthew[DOT]vbommel[AT]gmail[DOT]com
+      </div>
+    </div>
+  
+  </div>
+</footer>
+
+</body>
+</html>
