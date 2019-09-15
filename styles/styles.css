@@ -26,7 +26,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .small-font {
-    font-size: calc(8px + (24 - 16) * ((100vw - 300px) / (1600 - 300)));
+    font-size: calc(16px + 0.5 * (24 - 16) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .no-bullets {
