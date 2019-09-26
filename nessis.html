@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-101862602-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Matthew van Bommel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- jQuery local fallback -->
+  <script>window.jQuery || document.write('<script src="jquery/jquery-3.3.1.min.js"><\/script>')</script>
+  <!-- Bootstrap JS CDN -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <!-- Bootstrap JS local fallback -->
+  <script>if(typeof($.fn.modal) === 'undefined') {document.write('<script src="bootstrap-4.2.1-dist/js/bootstrap.min.js"><\/script>')}</script>
+  <!-- Bootstrap CSS local fallback -->
+  <div id="bootstrapCssTest" class="hidden"></div>
+  <script>
+    $(function() {
+      if ($('#bootstrapCssTest').is(':visible')) {
+        $("head").prepend('<link rel="stylesheet" href="bootstrap-4.2.1-dist/css/bootstrap.min.css">');
+      }
+    });
+  </script>
+  
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-sm navbar-dark fixed-top navbar-custom">
+    <!--Home Button-->
+    <a class="navbar-brand navbar-brand-custom" href="/">MvB</a>
+    <!--Hamburger Menu-->
+    <button type="button" aria-label="Navbar Toggle" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="dropdown dropdown-center navbar-center">
+      <a class="btn btn-sm dropdown-toggle" href="#" role="button" id="dropdown-menu-link" data-toggle="dropdown" aria-haspopup="true"
+         aria-expanded="false">
+        More
+      </a>
+      <div class="dropdown-menu navbar-center dropdown-menu-center" aria-labelledby="dropdown-menu-link">
+        <a class="dropdown-item" href="/#about-me">About Me</a>
+        <a class="dropdown-item" href="/#projects">Projects</a>
+        <!--<a class="dropdown-item" href="/#posts">Posts</a>-->
+        <a class="dropdown-item" href="/#media">Media</a>
+      </div>
+    </div>
+    
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <!--Navbar Buttons-->
+      <ul class="nav navbar-nav ml-auto">
+        <li class = 'ml-auto'><a href="https://github.com/mvanbommel" target="_blank" rel="noreferrer">
+          <img class="navbar-button" src="images/GitHub-Mark-Light-64px.png" alt="github">
+        </a></li>
+        <li class = 'ml-auto'><a href="https://twitter.com/MattvanBommel" target="_blank" rel="noreferrer">
+          <img class="navbar-button" src="images/Twitter_Logo_WhiteOnImage.png" alt="twitter">
+        </a></li>
+        <li class = 'ml-auto'><a href="https://www.linkedin.com/in/matthewvanbommel/" target="_blank" rel="noreferrer">
+          <img class="navbar-button" src="images/In-White-54px-R.png" alt="linkedin">
+        </a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12 below-navbar text-center">
+        <h3>Home Sweet Home: Quantifying Home Court Advantages For NCAA Basketball Statistics</h3>
+        <p>
+          <span style="white-space: nowrap;">Matthew van Bommel,</span>
+          <span style="white-space: nowrap;">Luke Bornn,</span>
+          <span style="white-space: nowrap;">Peter Chow-White,</span>
+          <span style="white-space: nowrap;">Chuancong Gao</span>
+          <br>
+          Simon Fraser University
+        </p>
+        
+        <p>Poster Presentation at NESSIS 2019</p>
+        
+        <ul style="padding-left:0; list-style-type:none">
+          <li><a href="files/home_sweet_home_paper.pdf">Full paper PDF</a></li>
+          <li><a href="https://arxiv.org/abs/1909.04817">Full paper on arXiv</a></li>
+          <li><a href="files/home_sweet_home_poster.pdf">Poster PDF</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <p>
+          <b>Abstract:</b>
+          Box score statistics are the baseline measures of performance for National Collegiate
+          Athletic Association (NCAA) basketball. Between the 2011-2012 and 2015-2016 seasons, NCAA
+          teams performed better at home compared to on the road in nearly all box score statistics
+          across both genders and all three divisions. Using box score data from over 100,000 games
+          spanning the three divisions for both women and men, we examine the factors underlying
+          this discrepancy. The prevalence of neutral location games in the NCAA provides an
+          additional angle through which to examine the gaps in box score statistic performance,
+          which we believe has been underutilized in existing literature. We also estimate a
+          regression model to quantify the home court advantages for box score statistics and
+          compare the magnitudes to other factors such as increased number of possessions, and team
+          strength. Additionally, we examine the biases of scorekeepers and referees. We present
+          evidence that scorekeepers tend to have greater home team biases when observing men
+          compared to women, higher divisions compared to lower divisions, and stronger teams
+          compared to weaker teams. Finally, we present statistically significant results indicating
+          referee decisions are impacted by attendance, with larger crowds resulting in greater bias
+          in favor of the home team.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="footer small-font">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <p class="no-margin">Contact</p>
+        <ul class="list-unstyled no-margin">
+          <li><a href="https://twitter.com/MattvanBommel" target="_blank" rel="noreferrer">Twitter</a></li>
+          <li><a href="https://www.linkedin.com/in/matthewvanbommel/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+          <li><a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Email</a></li>
+        </ul>
+        <div class="collapse" id="collapseExample">
+            matthew[DOT]vbommel[AT]gmail[DOT]com
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
