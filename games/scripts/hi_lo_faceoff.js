@@ -60,12 +60,12 @@ class PlayedCard {
 const nativeCardHeight = 72.6;
 const nativeCardWidth = 50;
 
-let screenWidth = window.screen.availWidth;
-let screenHeight = window.screen.availHeight;
+let screenWidth = document.documentElement.clientWidth;
+let screenHeight = document.documentElement.clientHeight;
 
 window.onresize = function() {
-  screenWidth = window.screen.availWidth;
-  screenHeight = window.screen.availHeight;
+  screenWidth = document.documentElement.clientWidth;
+  screenHeight = document.documentElement.clientHeight;
   displayGame();
 }
 
