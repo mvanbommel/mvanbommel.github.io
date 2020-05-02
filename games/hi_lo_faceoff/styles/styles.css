@@ -1,0 +1,165 @@
+/* Card images courtesy of https://code.google.com/archive/p/vector-playing-cards/ */
+
+/* Elements */
+#gameArea button,
+#modal button {
+  background-color: #f1f1f1;
+  border: none;
+  padding: 10px;
+}
+
+#gameArea button:hover,
+#modal button:hover {
+  background-color: #dddddd;
+}
+
+#gameArea button.active,
+#modal button.active {
+  background-color: #cccccc
+}
+
+#gameArea li {
+  display: inline;
+  text-align: center;
+  padding: 5px;
+}
+
+
+/* Classes */
+.cards {
+  height: 148.9px;
+  padding: 10px;
+}
+
+.center {
+  padding: 0;
+  width: 100%;
+  margin: auto;
+}
+
+.tabBar {
+  background-color: #f1f1f1;
+  height: 44px;
+  width: 100%;
+}
+
+.tabBar button {
+  float: left;
+}
+
+
+/* IDs */
+#backToGameButton {
+  display: none;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#buttonArea {
+  padding: 10px;
+}
+
+#gameArea {
+  width: 100%;
+  min-width: 320px;
+  padding-top: 50px;
+  text-align: center;
+  font-size: 16px;
+}
+
+#gameOutcome {
+  display: none;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+#gameType button {
+  width: 110px;
+  padding: 5px;
+}
+
+@media (max-width: 425px) {
+  #gameType button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+#instructionsTab {
+  display: none;
+  padding: 25px;
+  text-align: left;
+}
+
+#mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(52, 73, 94, 0.8);
+  z-index: 50;
+  visibility: visible;
+  
+  opacity: 1;
+  
+  transition: 0.7s;
+}
+
+#modal {
+  font-size: 16px;
+  
+  display: block;
+  position: fixed;
+  margin-top: 50px;
+  top: 5%;
+  left: calc((100vw - 700px) / 2);
+  
+  height: 80%; 
+  max-height: min(600px, calc(100vh * 0.8));
+
+  width: 80%;
+  min-width: 320px;
+  max-width: min(700px, calc(100vw * 0.8));
+
+  background: rgba(255, 255, 255);
+
+  z-index: 100;
+}
+
+@media (max-height: calc(600px / 0.9)) {
+  #modal {
+    top: 0%;
+    height: calc(100vh - 50px);
+    max-height: 600px;
+  }
+}
+
+@media (max-width: calc(700px / 0.8)) {
+  #modal {
+    left: 10%;
+  }
+}
+
+@media (max-width: calc(320px / 0.8)) {
+  #modal {
+    left: max(0px, calc((100vw - 320px) / 2));
+  }
+}
+
+#modalContent {
+  background-color: white;
+
+  padding-top: 10px;
+  padding-bottom: 20px;
+
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+#settingsTab {
+  display: block;
+  text-align: center;
+}

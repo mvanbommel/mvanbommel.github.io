@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-101862602-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+  <head>
+    <meta charset="UTF-8">
+    <title>Hi-Lo Faceoff</title>
+    <meta name="Hi-Lo Faceoff"
+          content=" A two player card game of guessing, bluffing, and reading your opponent.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../styles/styles.css">
+
+    <!-- Hi-Lo Faceoff Styles -->
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  
+  <body>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- jQuery local fallback -->
+    <script>window.jQuery || document.write('<script src="../../jquery/jquery-3.3.1.min.js"><\/script>')</script>
+    <!-- Bootstrap JS CDN -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS local fallback -->
+    <script>if(typeof($.fn.modal) === 'undefined') {document.write('<script src="../../bootstrap-4.2.1-dist/js/bootstrap.min.js"><\/script>')}</script>
+    <!-- Bootstrap CSS local fallback -->
+    <div id="bootstrapCssTest" class="hidden"></div>
+    <script>
+      $(function() {
+        if ($('#bootstrapCssTest').is(':visible')) {
+          $("head").prepend('<link rel="stylesheet" href="../../bootstrap-4.2.1-dist/css/bootstrap.min.css">');
+        }
+      });
+    </script>
+    
+    
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top navbar-custom">
+      <!--Home Button-->
+      <a class="navbar-brand navbar-brand-custom" href="/">MvB</a>
+      <!--Hamburger Menu-->
+      <button type="button" aria-label="Navbar Toggle" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="dropdown dropdown-center navbar-center">
+        <a class="btn btn-sm dropdown-toggle" href="#" role="button" id="dropdown-menu-link" data-toggle="dropdown" aria-haspopup="true"
+           aria-expanded="false">
+          More
+        </a>
+        <div class="dropdown-menu navbar-center dropdown-menu-center" aria-labelledby="dropdown-menu-link">
+          <a class="dropdown-item" href="/#about-me">About Me</a>
+          <a class="dropdown-item" href="/#projects">Projects</a>
+          <!--<a class="dropdown-item" href="/#posts">Posts</a>-->
+          <a class="dropdown-item" href="/#media">Media</a>
+        </div>
+      </div>
+      
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <!--Navbar Buttons-->
+        <ul class="nav navbar-nav ml-auto">
+          <li class = 'ml-auto'><a href="https://github.com/mvanbommel" target="_blank" rel="noreferrer">
+            <img class="navbar-button" src="../../images/GitHub-Mark-Light-64px.png" alt="github">
+          </a></li>
+          <li class = 'ml-auto'><a href="https://twitter.com/MattvanBommel" target="_blank" rel="noreferrer">
+            <img class="navbar-button" src="../../images/Twitter_Logo_WhiteOnImage.png" alt="twitter">
+          </a></li>
+          <li class = 'ml-auto'><a href="https://www.linkedin.com/in/matthewvanbommel/" target="_blank" rel="noreferrer">
+            <img class="navbar-button" src="../../images/In-White-54px-R.png" alt="linkedin">
+          </a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+
+
+    <div id="gameArea">
+
+      <div id="buttonArea">
+        <button id="modalButton">Settings</button>
+        <a href="https://github.com/mvanbommel/hi_lo_faceoff" target="_blank" rel="noreferrer"><button id="codeButton">Code</button></a>
+      </div>
+
+      <div class="cards">
+        <ul class="center", id="playerTwoHand">
+        </ul>
+      </div>
+
+      <div class="cards", height>
+        <ul class="center", id="playerTwoPlayed">
+        </ul>
+      </div>
+
+      <div id="score">
+        <p></p>
+      </div>
+
+      <div class="action">
+        <p class="center" ></p>
+        <div id="relationshipButtons">
+          <ul class="center">
+            <li><button id="higher">Higher</button></li>
+            <li><button id="equal">Equal</button></li>
+            <li><button id="lower">Lower</button></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cards">
+        <ul class="center", id="playerOnePlayed">
+        </ul>
+      </div>
+
+      <div class="cards">
+        <ul class="center", id="playerOneHand">
+        </ul>
+      </div>
+
+    </div>
+
+    <div id="mask"></div>
+    <div class="center", id="modal">
+      <div class="tabBar">
+        <button class="active" id="settingsTabButton">Settings</button>
+        <button id="instructionsTabButton">Instructions</button>
+      </div>      
+      <div id="modalContent">
+
+        <div id="settingsTab">
+          <h1>Hi-Lo Faceoff</h1>
+          <button id="backToGameButton">Back To Game</button>
+          <p id="gameOutcome">""</p>
+          <br>
+          <p style="margin-bottom: 0px">Your Record:</p>
+          <p id="record">0-0</p>
+          <div id="gameType">
+            <button id="quickGameButton">Quick Game<br>(5 points)</button>
+            <button class="active" id="halfGameButton">Half Game<br>(11 points)</button>
+            <button id="fullGameButton">Full Game<br>(21 points)</button>
+          </div>
+          <br>
+          <div>
+            <label for="gameSpeedRange">Game Speed:</label>
+            <br>
+            Slow
+            <input type="range" id="gameSpeedRange" name="gameSpeedRange" min="0.25" max="1.75" step="0.25">
+            Fast
+          </div>
+          <br>
+          <button id="startNewGameButton">Start New Game</button>
+        </div>
+
+        <div id="instructionsTab">
+          <p>Hi-Lo Faceoff is a two player card game of guessing, bluffing, and reading your opponent. Each player is dealt a hand of 5 cards. Each turn begins with one player (the active player) playing a card face up and their opponent playing a card face down in response. The active player then guesses if their opponent's face down card is higher, lower, or equal to their own card (aces are low). If the active player guesses correctly, they gain 1 point (or 5 points if they correctly guess that the cards are equal), but if they guess incorrectly, their opponent gains 1 point. The played cards are discarded and play then continues to the next turn, where the players switch roles and complete the same procedure. After 5 turns, alternating roles each turn, players' hands have been emptied. The discard pile is then shuffled back into to the deck and each player is dealt a new hand of 5 cards and the turns continue from where they left off. The game ends whenever one of the players reaches (or exceeds) a predetermined number of points (commonly 5, 11, or 21) and that player wins the game!</p>
+        </div>
+
+      </div>     
+    </div>
+
+    <footer class="footer small-font">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <p class="no-margin">Contact</p>
+          <ul class="list-unstyled no-margin">
+            <li><a href="https://twitter.com/MattvanBommel" target="_blank" rel="noreferrer">Twitter</a></li>
+            <li><a href="https://www.linkedin.com/in/matthewvanbommel/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+            <li><a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Email</a></li>
+          </ul>
+          <div class="collapse" id="collapseExample">
+              matthew[DOT]vbommel[AT]gmail[DOT]com
+          </div>
+        </div>
+
+    </footer>
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

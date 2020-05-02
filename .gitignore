@@ -48,3 +48,6 @@ Temporary Items
 
 # Pycharm Environment
 .idea
+
+# VS Code Environment
+.vscode
