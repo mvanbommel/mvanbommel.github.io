@@ -364,10 +364,10 @@ async function endTurn() {
   }
 
   if (Math.max(playerOne.score, playerTwo.score) >= winningScore) {
-    if (playerOne.score >= winningScore) {
+    if (playerOne.score > playerTwo.score && playerOne.score >= winningScore) {
       playerWins++;
       gameState = 4; 
-    } else if (playerTwo.score >= winningScore) {
+    } else if (playerTwo.score > playerOne.score && playerTwo.score >= winningScore) {
       playerLosses--;
       gameState = 5;
     }
