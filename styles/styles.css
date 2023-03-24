@@ -17,6 +17,10 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 90px; /* Height of navbar = 45px */
 }
 
+.just-below-navbar {
+    padding-top: 55px; /* Height of navbar = 45px */
+}
+
 .no-right-padding {
     padding-right: 0px;
 }
@@ -165,41 +169,6 @@ h1, h2, h3, h4, h5, h6 {
     .bio-image {
       width: 95%;
     }
-}
-
-
-/* */
-/* Projects on Home Page */
-/* */
-.project-box {
-    background-color: #2D2D2D;
-    margin-bottom: 10%;
-    padding-top: 50%;
-    position: relative;
-    width: 100%;
-}
-
-.project-icon {
-    /* Dimensions */
-    width: 50px;
-    height: auto;
-
-    /* Position */
-    position: absolute;
-    bottom: 5%;
-    right: 5%;
-}
-
-.project-text {
-    color: #FFFFFF;
-    text-align: center;
-
-    /* Position */
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
 }
 
 
